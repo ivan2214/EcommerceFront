@@ -8,7 +8,7 @@ import Marcas from '@/components/Marcas'
 const Home = () => {
 
   return (
-    <main className='min-h-screen overflow-hidden w-full max-w-7xl mx-auto bg-slate-100 text-gray-900'>
+    <main className='min-h-screen overflow-hidden w-full max-w-screen-xl mx-auto bg-slate-100 text-gray-900'>
       <Slider />
       {/*  <Destacados /> */}
       <Categories />

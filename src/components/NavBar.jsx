@@ -57,7 +57,7 @@ const NavBar = () => {
         } sticky top-0
         
       z-50
-      mx-auto w-full max-w-7xl    flex-col    gap-5 bg-green-400 py-1 px-5 shadow-lg transition-all  duration-700 ease-linear  lg:flex lg:h-max lg:translate-x-0 lg:flex-row lg:items-center lg:justify-between`}
+      mx-auto w-full max-w-screen-xl    flex-col    gap-5 bg-green-400 py-1 px-5 shadow-lg transition-all  duration-700 ease-linear  lg:flex lg:h-max lg:translate-x-0 lg:flex-row lg:items-center lg:justify-between`}
       >
         <Link to='/' className=''>
           <img
