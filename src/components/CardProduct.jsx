@@ -1,11 +1,20 @@
+import { addCartProductAsync } from '@/redux/slices/cart/thunk'
 import React from 'react'
+import { useDispatch } from 'react-redux'
 
 import { formatAsARS } from '@/utils/formatNumber'
 import { Link } from 'react-router-dom'
 
 const CardProduct = ({ title, description, price, image, id }) => {
+  const dispatch = useDispatch()
+
+  const addCart = () => {
+    console.log('añadido')
+    dispatch(addCartProductAsync(id))
+  }
+
   return (
-    <article className='h-full lg:max-w-xs rounded-md lg:min-h-[400px] lg:w-96 '>
+    <article className='h-full rounded-md lg:min-h-[400px] lg:w-96 lg:max-w-xs '>
       <div className='flex h-full flex-col  items-center  justify-between '>
         <Link to={`/product/${id}`} className=' w-full'>
           <img
