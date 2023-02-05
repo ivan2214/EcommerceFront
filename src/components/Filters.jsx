@@ -88,9 +88,9 @@ const Filters = () => {
   const filter = () => {
     dispatch(filterAsync(filters))
     toast.promise(dispatch(filterAsync(filters)), {
-      loading: 'Saving...',
-      success: 'Settings saved!',
-      error: 'Could not save.',
+      loading: 'Cargando productos filtrados...',
+      success: 'Filtrados!',
+      error: 'Ups algo salio mal.',
     })
   }
 
