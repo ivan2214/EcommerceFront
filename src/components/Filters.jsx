@@ -74,7 +74,9 @@ const Filters = () => {
   }, [filters])
 
   useEffect(() => {
-    if (order === 'asc' || order == 'desc'){ dispatch(orderProducts(order))}
+    if (order === 'asc' || order == 'desc') {
+      dispatch(orderProducts(order))
+    }
   }, [order])
 
   useEffect(() => {
@@ -98,16 +100,16 @@ const Filters = () => {
 
   return (
     <>
-      <div className='flex flex-col items-center gap-5 py-5 px-5 md:hidden'>
+      <div className='flex flex-col items-center gap-5 py-5 px-5 lg:hidden'>
         <button
-          className='min-w-full rounded-full border-2 bg-white py-1 px-6 font-normal text-green-400  shadow-sm'
+          className='w-full max-w-[150px] rounded-full border-2 bg-white py-1 px-6 font-normal text-green-400 shadow-sm  md:max-w-[250px]'
           onClick={() => setOpenFiltersOrder(!openFiltersOrder)}
         >
           Orden
         </button>
 
         <button
-          className='min-w-full rounded-full border-2 bg-white py-1 px-6 font-normal text-green-400  shadow-sm'
+          className='w-full max-w-[150px] rounded-full border-2 bg-white py-1 px-6 font-normal text-green-400 shadow-sm  md:max-w-[250px]'
           onClick={() => setOpenFiltersCategory(!openFiltersCategory)}
         >
           Categorias
@@ -162,7 +164,7 @@ const Filters = () => {
         <></>
       )}
 
-      <section className='hidden flex-col gap-5 overflow-hidden p-5  md:w-full md:flex-row md:justify-between lg:flex lg:min-h-screen   lg:max-w-sm lg:flex-col lg:justify-start lg:gap-16 lg:p-10'>
+      <section className='hidden flex-col gap-5 overflow-hidden p-5  md:w-full md:flex-row md:justify-between lg:flex lg:min-h-screen   lg:max-w-[150px] lg:flex-col lg:justify-start lg:gap-16 lg:py-10'>
         <div className='flex flex-col items-start gap-5'>
           <h2 className='text-xl font-bold text-green-500'>Ordenar por:</h2>
           {condition ? (
