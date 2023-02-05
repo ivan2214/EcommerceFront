@@ -36,7 +36,7 @@ const Slider = () => {
       <img
         style={{ opacity: opacity, transform: `translateX(${translate})` }}
         src={images[imgIndex]}
-        className='transition-all duration-500 ease-in-out   lg:m-auto lg:aspect-[16/16]  lg:max-h-96 lg:min-h-full lg:min-w-full lg:max-w-lg lg:object-contain'
+        className='aspect-[16/4]  transition-all duration-500   ease-in-out lg:m-auto lg:aspect-auto  lg:max-h-96 lg:min-h-full lg:min-w-full lg:max-w-lg lg:object-contain'
         alt=''
       />
       <div className='absolute top-0   z-10 flex h-full w-full items-center justify-between '>

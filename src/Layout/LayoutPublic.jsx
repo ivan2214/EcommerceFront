@@ -28,7 +28,7 @@ const LayoutPublic = () => {
     )
 
   return (
-    <div>
+    <div className='scroll-smooth'>
       <NavBar />
       <Outlet />
       <footer>Footer</footer>
