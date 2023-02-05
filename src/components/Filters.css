@@ -1,0 +1,12 @@
+.animationButton {
+  animation: animationButton  1s;
+}
+
+@keyframes animationButton {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
