@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import './Filters.css'
+import { toast } from 'react-hot-toast'
 
 const Filters = () => {
   const { name, cat } = useParams()
@@ -73,7 +74,7 @@ const Filters = () => {
   }, [filters])
 
   useEffect(() => {
-    if (order === 'asc' || order == 'desc') dispatch(orderProducts(order))
+    if (order === 'asc' || order == 'desc'){ dispatch(orderProducts(order))}
   }, [order])
 
   useEffect(() => {
@@ -86,6 +87,11 @@ const Filters = () => {
 
   const filter = () => {
     dispatch(filterAsync(filters))
+    toast.promise(dispatch(filterAsync(filters)), {
+      loading: 'Saving...',
+      success: 'Settings saved!',
+      error: 'Could not save.',
+    })
   }
 
   const condition = filters.brand.length > 0 || filters.category.length > 0 || order !== ''
@@ -141,9 +147,15 @@ const Filters = () => {
             className='max-w-[150px]  select-none appearance-none rounded-md bg-green-400 py-1 px-3 text-white'
             id=''
           >
-            <option className='bg-green-400 text-white' value='order'>Orden</option>
-            <option className='bg-green-400 text-white' value='asc'>mayor+</option>
-            <option className='bg-green-400 text-white' value='desc'>menor-</option>
+            <option className='bg-green-400 text-white' value='order'>
+              Orden
+            </option>
+            <option className='bg-green-400 text-white' value='asc'>
+              mayor+
+            </option>
+            <option className='bg-green-400 text-white' value='desc'>
+              menor-
+            </option>
           </select>
         </section>
       ) : (

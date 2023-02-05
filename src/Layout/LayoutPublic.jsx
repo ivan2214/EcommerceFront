@@ -7,6 +7,7 @@ import { getAllCategoriesAsync } from '@/redux/slices/categories/thunk'
 import { getAllBrandsAsync } from '@/redux/slices/brands/thunk'
 import { loadingState } from '@/redux/slices/products/productsSlice'
 import Loading from '@/components/Loading'
+import { Toaster } from 'react-hot-toast'
 
 const LayoutPublic = () => {
   const dispatch = useDispatch()
@@ -22,7 +23,7 @@ const LayoutPublic = () => {
 
   if (loading)
     return (
-      <div className='w-full items-center flex justify-center h-screen'>
+      <div className='flex h-screen w-full items-center justify-center'>
         <Loading />
       </div>
     )
@@ -32,6 +33,7 @@ const LayoutPublic = () => {
       <NavBar />
       <Outlet />
       <footer>Footer</footer>
+      <Toaster />
     </div>
   )
 }

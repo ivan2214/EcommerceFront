@@ -30,7 +30,9 @@ const AllProducts = () => {
         ) : (
           <>
             {!products.length ? (
-              <Loading />
+              <div>
+                <p>Lo sentimos no contamos con esos productos</p>
+              </div>
             ) : (
               <>
                 {products.map((p) => (
