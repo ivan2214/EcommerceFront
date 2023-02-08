@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const CardHome = ({ name, logo }) => {
   const upScroll = () => {
-    window.scroll(0)
+    window.scroll(0,0)
   }
 
   return (

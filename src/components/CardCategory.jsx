@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom'
 
 const CardCategory = ({ name = 'category', logo, id }) => {
   const upScroll = () => {
-    window.scroll(0)
+    window.scroll(0,0)
   }
 
   return (
