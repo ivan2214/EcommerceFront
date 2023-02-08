@@ -1,28 +1,40 @@
 import { addCartProductAsync } from '@/redux/slices/cart/thunk'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { formatAsARS } from '@/utils/formatNumber'
 import { Link } from 'react-router-dom'
+import SkeletonImage from './SkeletonImage'
 
 const CardProduct = ({ title, description, price, image, id }) => {
   const dispatch = useDispatch()
-
+  const [loading, setLoading] = useState(false)
   const addCart = () => {
     console.log('añadido')
     dispatch(addCartProductAsync(id))
   }
 
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 1000)
+  }, [])
+
   return (
     <article className='h-full rounded-md lg:max-h-[700px] lg:min-h-[500px] lg:w-96 lg:max-w-xs '>
       <div className='flex h-full flex-col  items-center  justify-between '>
-        <Link to={`/product/${id}`} className=' w-full'>
-          <img
-            className='h-[150px] max-h-[150px]  min-h-[100px] w-full rounded-md object-contain'
-            src={image}
-            alt={description}
-          />
-        </Link>
+        {!loading ? (
+          <Link to={`/product/${id}`} className=' w-full'>
+            <img
+              className='h-[150px] max-h-[150px]  min-h-[100px] w-full rounded-md object-contain'
+              src={image}
+              alt={description}
+            />
+          </Link>
+        ) : (
+          <SkeletonImage w="384px" />
+        )}
         <div className='flex h-full w-full  flex-col items-center justify-between gap-10 rounded-md  p-5 shadow-lg'>
           <div className='flex  h-full w-full flex-col items-start justify-between gap-5'>
             <h3 className='text-lg font-bold capitalize text-purple-700'>{title}</h3>

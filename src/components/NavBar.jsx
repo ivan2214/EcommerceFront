@@ -29,6 +29,10 @@ const NavBar = () => {
 
   const [open, setOpen] = useState(false)
 
+  const upScroll = () => {
+    window.scroll(0, 0)
+  }
+
   return (
     <>
       <div
@@ -65,9 +69,7 @@ const NavBar = () => {
       <header
         id='navbar'
         className={` ${
-          !open
-            ? 'h-0 -translate-x-[100%] bg-gray-900'
-            : 'h-auto translate-x-[0%] bg-gray-900 py-1'
+          !open ? 'h-0 -translate-x-[100%] bg-gray-900' : 'h-auto translate-x-[0%] bg-gray-900 py-1'
         } sticky top-0
         z-50
       mx-auto
@@ -96,25 +98,25 @@ const NavBar = () => {
         <nav className=''>
           <ul className='flex flex-col items-center justify-between gap-12   pt-5 lg:flex-row lg:items-center lg:justify-center lg:gap-5 lg:p-3'>
             <Link className='hidden lg:flex' to='/favorite'>
-              <li className='flex  items-center gap-3 font-sans text-lg font-semibold text-white transition-all duration-500 hover:text-gray-500'>
+              <li onClick={upScroll} className='flex  items-center gap-3 font-sans text-lg font-semibold text-white transition-all duration-500 hover:text-gray-500'>
                 <MdOutlineFavoriteBorder className='text-2xl transition-all duration-500 ease-linear hover:origin-top hover:rotate-12 hover:text-gray-500' />
                 favoritos
               </li>
             </Link>
             <Link className='hidden lg:flex' to='/products'>
-              <li className='flex  items-center gap-3 font-sans text-lg font-semibold text-white transition-all duration-500 hover:text-gray-500'>
+              <li onClick={upScroll} className='flex  items-center gap-3 font-sans text-lg font-semibold text-white transition-all duration-500 hover:text-gray-500'>
                 <FaStoreAlt className='text-2xl transition-all duration-500 ease-linear hover:origin-top hover:rotate-12 hover:text-gray-500' />
                 Tienda
               </li>
             </Link>
             <Link className='hidden lg:flex' to='/account'>
-              <li className='flex  items-center gap-3 font-sans text-lg font-semibold text-white transition-all duration-500 hover:text-gray-500'>
+              <li onClick={upScroll} className='flex  items-center gap-3 font-sans text-lg font-semibold text-white transition-all duration-500 hover:text-gray-500'>
                 <AiOutlineUser className='text-2xl transition-all duration-500 ease-linear hover:origin-top hover:rotate-12 hover:text-gray-500' />
                 Cuenta
               </li>
             </Link>
             <Link className='hidden lg:flex' to='/cart'>
-              <li className='relative flex select-none items-center gap-3  font-sans text-lg font-semibold text-white transition-all duration-500 hover:text-gray-500 lg:relative'>
+              <li onClick={upScroll} className='relative flex select-none items-center gap-3  font-sans text-lg font-semibold text-white transition-all duration-500 hover:text-gray-500 lg:relative'>
                 <AiOutlineShoppingCart className='text-2xl transition-all duration-500 ease-linear hover:origin-top hover:rotate-12 hover:text-gray-500' />
                 <span className=':absolute :top-[-15px] :right-[-7px] text-white '>
                   {cartTotalQuantity}

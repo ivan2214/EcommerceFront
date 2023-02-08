@@ -29,7 +29,7 @@ const LayoutPublic = () => {
     )
 
   return (
-    <div className='scroll-smooth'>
+    <div className='scroll-smooth transition-all duration-300 '>
       <NavBar />
       <Outlet />
       <footer>Footer</footer>
