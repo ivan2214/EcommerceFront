@@ -10,7 +10,13 @@ const Categories = () => {
       <h2 className='text-left text-3xl font-bold text-purple-700 '>¿Qué estás buscando?</h2>
       <section className='grid h-full w-full grid-cols-[repeat(auto-fit,minmax(150px,1fr))] place-items-center  gap-16  py-5'>
         {categories.map((c) => {
-          return <CardCategory key={c.id} name={c?.attributes?.name} logo={c.attributes.name} />
+          return (
+            <CardCategory
+              key={c.id}
+              name={c?.attributes?.name}
+              image={`https://ecommercestrapi-back-production.up.railway.app${c?.attributes?.image?.data[0]?.attributes?.url} `}
+            />
+          )
         })}
       </section>
     </section>
