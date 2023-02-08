@@ -19,6 +19,11 @@ module.exports = {
         '2xl': '2560px',
         // => @media (min-width: 1536px) { ... }
       },
+      colors: {
+        purple: {
+          700: '#6F1AB6',
+        },
+      },
     },
   },
   plugins: [],

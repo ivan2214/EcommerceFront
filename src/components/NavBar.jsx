@@ -34,10 +34,10 @@ const NavBar = () => {
       <div
         className='sticky top-0  right-0 z-50 flex
         items-center justify-between
-      overflow-hidden bg-green-400 text-white transition-all duration-500 ease-linear'
+      overflow-hidden bg-gray-900 text-white transition-all duration-500 ease-linear'
       >
         <div
-          className={`flex h-auto w-full items-start bg-green-400 px-5 py-3  transition-all duration-500 ease-linear lg:hidden `}
+          className={`flex h-auto w-full items-start bg-gray-900 px-5 py-3  transition-all duration-500 ease-linear lg:hidden `}
         >
           {!open ? (
             <button className=' text-white' onClick={() => setOpen(!open)}>
@@ -66,16 +66,16 @@ const NavBar = () => {
         id='navbar'
         className={` ${
           !open
-            ? 'h-0 -translate-x-[100%] bg-green-400'
-            : 'h-auto translate-x-[0%] bg-green-400 py-1'
+            ? 'h-0 -translate-x-[100%] bg-gray-900'
+            : 'h-auto translate-x-[0%] bg-gray-900 py-1'
         } sticky top-0
         z-50
       mx-auto
-      h-full w-full max-w-screen-xl    flex-col    gap-5 overflow-hidden bg-green-400 px-5  shadow-lg transition-all duration-700  ease-linear lg:flex  lg:h-max lg:translate-x-0 lg:flex-row lg:items-center lg:justify-between lg:py-1`}
+      h-full w-full max-w-screen-xl    flex-col    gap-5 overflow-hidden bg-gray-900 px-5  shadow-lg transition-all duration-700  ease-linear lg:flex  lg:h-max lg:translate-x-0 lg:flex-row lg:items-center lg:justify-between lg:py-1`}
       >
-        <Link to='/' className='hidden lg:flex'>
+        <Link to='/' className='hidden rounded-3xl lg:flex'>
           <img
-            className='mb-5 hidden max-h-12 w-full object-cover transition-all  duration-500  ease-linear hover:origin-top hover:rotate-12 lg:flex lg:max-h-[50px]'
+            className='hidden max-h-12 w-full rounded-3xl object-cover  lg:flex lg:max-h-[50px]'
             src={img}
             alt=''
           />

@@ -6,7 +6,7 @@ const Marcas = () => {
   const { brands } = useSelector((s) => s.brands)
   return (
     <section className='mx-auto flex h-full w-full max-w-6xl flex-col gap-10  py-5'>
-      <h2 className='text-left text-3xl font-bold '>Las mejores marcas para vos</h2>
+      <h2 className='text-left text-3xl font-bold text-purple-700 '>Las mejores marcas para vos</h2>
       <section className='grid h-full w-full grid-cols-[repeat(auto-fit,minmax(150px,1fr))] place-items-center  gap-8 lg:gap-16  py-5'>
         {brands ? (
           brands.map(({ id, attributes }, i) => {

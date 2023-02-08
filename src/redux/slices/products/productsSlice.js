@@ -18,7 +18,7 @@ export const productsSlice = createSlice({
     orderProducts: (state, action) => {
       let productsState = [...state.products]
       let filter = action.payload
-      if (filter === 'orden') return state.pr
+      if (filter === 'orden') return state.products
       let filters = productsState.sort((a, b) => {
         if (filter === 'asc') {
           return b?.attributes?.price - a?.attributes?.price

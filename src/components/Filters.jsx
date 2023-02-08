@@ -5,11 +5,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import './Filters.css'
 import { toast } from 'react-hot-toast'
+import { SortArray } from '@/utils/sortedArray'
 
 const Filters = () => {
   const { name, cat } = useParams()
   const { categories } = useSelector((s) => s.categories)
   const { brands } = useSelector((s) => s.brands)
+  let catAlfa = [...categories].sort(SortArray)
+  let brandAlfa = [...brands].sort(SortArray)
   const [order, setOrder] = useState('')
   const [openFiltersCategory, setOpenFiltersCategory] = useState('')
   const [openFiltersOrder, setOpenFiltersOrder] = useState(false)
@@ -146,16 +149,16 @@ const Filters = () => {
           <select
             value={order || 'order'}
             onChange={({ target }) => handleChangeOrder(target)}
-            className='max-w-[150px]  select-none appearance-none rounded-md bg-green-400 py-1 px-3 text-white'
+            className='max-w-[150px]  select-none appearance-none rounded-md bg-purple-700 py-1 px-3 text-white'
             id=''
           >
-            <option className='bg-green-400 text-white' value='order'>
+            <option className='bg-purple-700 text-white' value='order'>
               Orden
             </option>
-            <option className='bg-green-400 text-white' value='asc'>
+            <option className='bg-purple-700 text-white' value='asc'>
               mayor+
             </option>
-            <option className='bg-green-400 text-white' value='desc'>
+            <option className='bg-purple-700 text-white' value='desc'>
               menor-
             </option>
           </select>
@@ -166,7 +169,7 @@ const Filters = () => {
 
       <section className='hidden flex-col gap-5 overflow-hidden p-5  md:w-full md:flex-row md:justify-between lg:flex lg:min-h-screen   lg:max-w-[150px] lg:flex-col lg:justify-start lg:gap-16 lg:py-10'>
         <div className='flex flex-col items-start gap-5'>
-          <h2 className='text-xl font-bold text-green-500'>Ordenar por:</h2>
+          <h2 className='text-xl font-bold text-purple-700'>Ordenar por:</h2>
           {condition ? (
             <button
               className={`animationButton rounded-full border  border-sky-400 py-1 px-4 text-gray-500 transition-all duration-500 
@@ -191,9 +194,9 @@ const Filters = () => {
           </select>
         </div>
         <div className='flex flex-col items-start gap-5'>
-          <h2 className='text-xl font-bold text-green-500'>Marca:</h2>
+          <h2 className='text-xl font-bold text-purple-700'>Marca:</h2>
 
-          {brands.map((b) => {
+          {brandAlfa?.map((b) => {
             return (
               <div key={b.id} className='flex items-center gap-5'>
                 <input
@@ -211,14 +214,14 @@ const Filters = () => {
           })}
         </div>
         <div className='flex flex-col items-start gap-5'>
-          <h2 className='text-xl font-bold text-green-500'>Categoria:</h2>
+          <h2 className='text-xl font-bold text-purple-700'>Categoria:</h2>
           {/* <select
           value={filters.category || 'category'}
           className='max-w-[150px] select-none rounded-md bg-white py-1 px-3 text-gray-900'
           name='category'
           id=''
         ></select> */}
-          {categories.map((c) => {
+          {catAlfa?.map((c) => {
             return (
               <div key={c.id} className='flex items-center gap-5'>
                 <input
