@@ -19,8 +19,8 @@ const CardCategory = ({ name = 'category', image, id }) => {
 
   return (
     <Link to={`/products/category/${name}`} onClick={upScroll}>
-      <article className='flex  min-w-[100px] max-w-[150px] flex-col items-center gap-4 rounded-lg p-5 shadow-md lg:w-56  lg:max-w-xs lg:p-6'>
-        {!loading ? <img src={image} className='max-h-[50px] max-w-xs' /> : <SkeletonImage />}
+      <article className='flex  min-h-[150px] min-w-[150px] max-w-[200px]  flex-col items-center gap-4 rounded-lg p-5 shadow-md lg:w-56 lg:min-h-max lg:max-w-xs lg:p-6'>
+        {!loading ? <img src={image} className='max-h-[50px] h-full w-full object-contain  max-w-xs' /> : <SkeletonImage />}
         <h3 className='text-center capitalize text-gray-900'>{name}</h3>
       </article>
     </Link>

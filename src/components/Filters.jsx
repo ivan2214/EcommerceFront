@@ -17,12 +17,12 @@ const Filters = () => {
   const [order, setOrder] = useState('')
   const [openFiltersCategory, setOpenFiltersCategory] = useState('')
   const [openFiltersOrder, setOpenFiltersOrder] = useState(false)
+  const [openFiltersBrand, setOpenFiltersBrand] = useState(false)
   const [filters, setFilters] = useState({
     brand: [],
     category: [],
   })
   const dispatch = useDispatch()
-  const filterRef = useRef()
 
   useEffect(() => {
     if (name && !filters.brand.includes(name))
@@ -71,7 +71,7 @@ const Filters = () => {
     })
     setOrder('')
   }
-
+  console.log(filters)
   useEffect(() => {
     if (filters.brand.length > 0 || filters.category.length > 0) {
       filter()
@@ -148,20 +148,29 @@ const Filters = () => {
       <div className='flex flex-col items-center gap-5 py-5 px-5 lg:hidden'>
         <button
           className='w-full max-w-[150px] rounded-full border-2 bg-white py-1 px-6 font-normal text-purple-700 shadow-sm  md:max-w-[250px]'
-          onClick={() => setOpenFiltersOrder(!openFiltersOrder)}
-        >
-          Orden
-        </button>
-
-        <button
-          className='w-full max-w-[150px] rounded-full border-2 bg-white py-1 px-6 font-normal text-purple-700 shadow-sm  md:max-w-[250px]'
           onClick={() => setOpenFiltersCategory(!openFiltersCategory)}
         >
           Categorias
         </button>
+        <div className=' flex items-center justify-between gap-5'>
+          <button
+            className='w-full max-w-[150px] rounded-full border-2 bg-white py-1 px-6 font-normal text-purple-700 shadow-sm  md:max-w-[250px]'
+            onClick={() => setOpenFiltersOrder(!openFiltersOrder)}
+          >
+            Orden
+          </button>
+
+          <button
+            className='w-full max-w-[150px] rounded-full border-2 bg-white py-1 px-6 font-normal text-purple-700 shadow-sm  md:max-w-[250px]'
+            onClick={() => setOpenFiltersBrand(!openFiltersBrand)}
+          >
+            Marcas
+          </button>
+        </div>
       </div>
 
       {/* filters mobile */}
+      {/* categoria */}
       <AnimatePresence>
         {openFiltersCategory && (
           <motion.div
@@ -176,7 +185,7 @@ const Filters = () => {
               variants={list}
               className=' my-5 w-full border border-white px-5  py-10 shadow-sm'
             >
-              {categories.map((c) => {
+              {catAlfa.map((c) => {
                 return (
                   <motion.div variants={item} key={c.id} className='flex items-center gap-5'>
                     <input
@@ -196,6 +205,42 @@ const Filters = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      {/*  mnarca */}
+      <AnimatePresence>
+        {openFiltersBrand && (
+          <motion.div
+            initial={{ x: -100 }}
+            transition={{ duration: 1 }}
+            animate={{ x: 0 }}
+            exit={{ x: -100 }}
+          >
+            <motion.section
+              initial='hidden'
+              animate='visible'
+              variants={list}
+              className=' my-5 w-full border border-white px-5  py-10 shadow-sm'
+            >
+              {brandAlfa.map((c) => {
+                return (
+                  <motion.div variants={item} key={c.id} className='flex items-center gap-5'>
+                    <input
+                      onChange={(e) => handleChange(e)}
+                      type='checkbox'
+                      className='text-gray-800'
+                      value={c?.attributes?.name}
+                      id={c?.attributes?.name}
+                      name='category'
+                      checked={filters?.brand.includes(c?.attributes?.name)}
+                    />
+                    <label htmlFor={c?.attributes?.name}>{c?.attributes?.name}</label>
+                  </motion.div>
+                )
+              })}
+            </motion.section>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {/* orden */}
       <AnimatePresence>
         {openFiltersOrder && (
           <motion.section

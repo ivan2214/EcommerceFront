@@ -11,10 +11,13 @@ export const detailSice = createSlice({
     getProductDetail: (state, action) => {
       state.productDetail = action.payload
     },
+    clearDetailProductState: (state, action) => {
+      state.productDetail = {}
+    },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { getProductDetail } = detailSice.actions // para las action
+export const { getProductDetail, clearDetailProductState } = detailSice.actions // para las action
 
 export default detailSice.reducer //para la store

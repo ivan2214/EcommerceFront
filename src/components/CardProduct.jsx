@@ -6,13 +6,18 @@ import { formatAsARS } from '@/utils/formatNumber'
 import { Link } from 'react-router-dom'
 import SkeletonImage from './SkeletonImage'
 import { motion } from 'framer-motion'
+import { getTotals } from '@/redux/slices/cart/cartSlice'
+import { clearDetailProductState } from '@/redux/slices/product/productSlice'
 
 const CardProduct = ({ title, description, price, image, id }) => {
   const dispatch = useDispatch()
   const [loading, setLoading] = useState(false)
   const addCart = () => {
-    console.log('añadido')
     dispatch(addCartProductAsync(id))
+    dispatch(getTotals())
+  }
+  const clearDetailState = () => {
+    dispatch(clearDetailProductState())
   }
 
   useEffect(() => {
@@ -31,13 +36,13 @@ const CardProduct = ({ title, description, price, image, id }) => {
     >
       <div className='flex h-full flex-col  items-center  justify-between '>
         {!loading ? (
-          <Link to={`/product/${id}`} className=' w-full'>
+          <Link to={`/product/${id}`} onClick={clearDetailState} className=' w-full'>
             <motion.img
               initial={{ scale: 0.2 }}
               animate={{ scale: 1 }}
               transition={{ duration: 1 }}
               loading='lazy'
-              className='mx-auto h-[150px] max-h-[200px] min-h-[50px]  w-full min-w-[208px] rounded-md object-cover'
+              className='mx-auto h-[150px] max-h-[200px] min-h-[50px]  w-full min-w-[208px] rounded-md object-contain'
               src={image}
               alt={description}
             />
