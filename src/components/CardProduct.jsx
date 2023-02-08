@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 import { formatAsARS } from '@/utils/formatNumber'
 import { Link } from 'react-router-dom'
 import SkeletonImage from './SkeletonImage'
+import { motion } from 'framer-motion'
 
 const CardProduct = ({ title, description, price, image, id }) => {
   const dispatch = useDispatch()
@@ -22,19 +23,27 @@ const CardProduct = ({ title, description, price, image, id }) => {
   }, [])
 
   return (
-    <article className='h-full rounded-md lg:max-h-[700px] lg:min-h-[500px] lg:w-96 lg:max-w-xs '>
+    <motion.article
+      initial={{ x: 100 }}
+      animate={{ x: 0 }}
+      transition={{ duration: 1 }}
+      className='h-full rounded-md lg:max-h-[700px] lg:min-h-[500px] lg:w-96 lg:max-w-xs '
+    >
       <div className='flex h-full flex-col  items-center  justify-between '>
         {!loading ? (
           <Link to={`/product/${id}`} className=' w-full'>
-            <img
-            loading='lazy'
-              className='h-[150px] min-w-[208px] mx-auto max-h-[200px]  min-h-[50px] w-full rounded-md object-cover'
+            <motion.img
+              initial={{ scale: 0.2 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 1 }}
+              loading='lazy'
+              className='mx-auto h-[150px] max-h-[200px] min-h-[50px]  w-full min-w-[208px] rounded-md object-cover'
               src={image}
               alt={description}
             />
           </Link>
         ) : (
-          <SkeletonImage w="384px" />
+          <SkeletonImage w='384px' />
         )}
         <div className='flex h-full w-full  flex-col items-center justify-between gap-10 rounded-md  p-5 shadow-lg'>
           <div className='flex  h-full w-full flex-col items-start justify-between gap-5'>
@@ -59,7 +68,7 @@ const CardProduct = ({ title, description, price, image, id }) => {
           </button>
         </div>
       </div>
-    </article>
+    </motion.article>
   )
 }
 

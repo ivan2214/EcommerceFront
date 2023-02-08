@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom'
 import './Filters.css'
 import { toast } from 'react-hot-toast'
 import { SortArray } from '@/utils/sortedArray'
+import { motion } from 'framer-motion'
 
 const Filters = () => {
   const { name, cat } = useParams()
@@ -114,6 +115,30 @@ const Filters = () => {
         },
       },
     )
+    window.scroll(0, 0)
+  }
+
+  const list = {
+    visible: {
+      opacity: 1,
+      transition: {
+        when: 'beforeChildren',
+        staggerChildren: 0.3,
+        staggerDirection: 1,
+        delayChildren: 0.3,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      transition: {
+        when: 'afterChildren',
+      },
+    },
+  }
+
+  const item = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -100 },
   }
 
   const condition = filters.brand.length > 0 || filters.category.length > 0 || order !== ''
@@ -184,7 +209,9 @@ const Filters = () => {
         <></>
       )}
 
-      <section className='hidden sticky  left-0 flex-col gap-5 overflow-hidden p-5  md:w-full md:flex-row md:justify-between lg:flex lg:min-h-screen   lg:max-w-[150px] lg:flex-col lg:justify-start lg:gap-16 lg:py-10'>
+      {/* pc */}
+
+      <section className='sticky left-0  hidden flex-col gap-5 overflow-hidden p-5  md:w-full md:flex-row md:justify-between lg:flex lg:min-h-screen   lg:max-w-[150px] lg:flex-col lg:justify-start lg:gap-16 lg:py-10'>
         <div className='flex flex-col items-start gap-5'>
           <h2 className='text-xl font-bold text-purple-700'>Ordenar por:</h2>
           {condition ? (
@@ -199,7 +226,10 @@ const Filters = () => {
           ) : (
             <></>
           )}
-          <select
+          <motion.select
+            initial={{ x: -100 }}
+            transition={{ duration: 1 }}
+            animate={{ x: 0 }}
             value={order || 'order'}
             onChange={({ target }) => handleChangeOrder(target)}
             className='max-w-[150px] select-none rounded-md bg-white py-1 px-3 text-gray-900'
@@ -208,52 +238,49 @@ const Filters = () => {
             <option value='order'>Orden</option>
             <option value='asc'>mayor+</option>
             <option value='desc'>menor-</option>
-          </select>
+          </motion.select>
         </div>
         <div className='flex flex-col items-start gap-5'>
           <h2 className='text-xl font-bold text-purple-700'>Marca:</h2>
-
-          {brandAlfa?.map((b) => {
-            return (
-              <div key={b.id} className='flex items-center gap-5'>
-                <input
-                  onChange={(e) => handleChange(e)}
-                  type='checkbox'
-                  className='text-gray-800'
-                  value={b?.attributes?.name}
-                  id={b?.attributes?.name}
-                  name='brand'
-                  checked={filters?.brand.includes(b?.attributes?.name)}
-                />
-                <label htmlFor={b?.attributes?.name}>{b?.attributes?.name}</label>
-              </div>
-            )
-          })}
+          <motion.div initial='hidden' animate='visible' variants={list}>
+            {brandAlfa?.map((b) => {
+              return (
+                <motion.div variants={item} key={b.id} className='flex items-center gap-5'>
+                  <input
+                    onChange={(e) => handleChange(e)}
+                    type='checkbox'
+                    className='text-gray-800'
+                    value={b?.attributes?.name}
+                    id={b?.attributes?.name}
+                    name='brand'
+                    checked={filters?.brand.includes(b?.attributes?.name)}
+                  />
+                  <label htmlFor={b?.attributes?.name}>{b?.attributes?.name}</label>
+                </motion.div>
+              )
+            })}
+          </motion.div>
         </div>
         <div className='flex flex-col items-start gap-5'>
           <h2 className='text-xl font-bold text-purple-700'>Categoria:</h2>
-          {/* <select
-          value={filters.category || 'category'}
-          className='max-w-[150px] select-none rounded-md bg-white py-1 px-3 text-gray-900'
-          name='category'
-          id=''
-        ></select> */}
-          {catAlfa?.map((c) => {
-            return (
-              <div key={c.id} className='flex items-center gap-5'>
-                <input
-                  onChange={(e) => handleChange(e)}
-                  type='checkbox'
-                  className='text-gray-800'
-                  value={c?.attributes?.name}
-                  id={c?.attributes?.name}
-                  name='category'
-                  checked={filters?.category.includes(c?.attributes?.name)}
-                />
-                <label htmlFor={c?.attributes?.name}>{c?.attributes?.name}</label>
-              </div>
-            )
-          })}
+          <motion.div initial='hidden' animate='visible' variants={list}>
+            {catAlfa?.map((c) => {
+              return (
+                <motion.div variants={item} key={c.id} className='flex items-center gap-5'>
+                  <input
+                    onChange={(e) => handleChange(e)}
+                    type='checkbox'
+                    className='text-gray-800'
+                    value={c?.attributes?.name}
+                    id={c?.attributes?.name}
+                    name='category'
+                    checked={filters?.category.includes(c?.attributes?.name)}
+                  />
+                  <label htmlFor={c?.attributes?.name}>{c?.attributes?.name}</label>
+                </motion.div>
+              )
+            })}
+          </motion.div>
         </div>
       </section>
     </>
