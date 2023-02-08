@@ -1,6 +1,6 @@
 import { orderProducts } from '@/redux/slices/products/productsSlice'
 import { getAllProductsAsync, filterAsync } from '@/redux/slices/products/thunk'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import './Filters.css'
@@ -21,6 +21,7 @@ const Filters = () => {
     category: [],
   })
   const dispatch = useDispatch()
+  const filterRef = useRef()
 
   useEffect(() => {
     if (name && !filters.brand.includes(name))
@@ -92,11 +93,27 @@ const Filters = () => {
 
   const filter = () => {
     dispatch(filterAsync(filters))
-    toast.promise(dispatch(filterAsync(filters)), {
-      loading: 'Cargando productos filtrados...',
-      success: 'Filtrados!',
-      error: 'Ups algo salio mal.',
-    })
+    toast.promise(
+      dispatch(filterAsync(filters)),
+      {
+        loading: 'Cargando productos filtrados...',
+        success: 'Filtrados!',
+        error: 'Ups algo salio mal.',
+      },
+      {
+        duration: 2000,
+
+        reverseOrder: true,
+
+        // Styling
+        style: {},
+        className: '',
+        style: {
+          background: '#333',
+          color: '#fff',
+        },
+      },
+    )
   }
 
   const condition = filters.brand.length > 0 || filters.category.length > 0 || order !== ''
@@ -167,7 +184,7 @@ const Filters = () => {
         <></>
       )}
 
-      <section className='hidden flex-col gap-5 overflow-hidden p-5  md:w-full md:flex-row md:justify-between lg:flex lg:min-h-screen   lg:max-w-[150px] lg:flex-col lg:justify-start lg:gap-16 lg:py-10'>
+      <section className='hidden sticky  left-0 flex-col gap-5 overflow-hidden p-5  md:w-full md:flex-row md:justify-between lg:flex lg:min-h-screen   lg:max-w-[150px] lg:flex-col lg:justify-start lg:gap-16 lg:py-10'>
         <div className='flex flex-col items-start gap-5'>
           <h2 className='text-xl font-bold text-purple-700'>Ordenar por:</h2>
           {condition ? (

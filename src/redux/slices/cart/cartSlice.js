@@ -66,7 +66,7 @@ export const cartSice = createSlice({
         reverseOrder: true,
 
         // Styling
-
+        style: {},
         className: '',
         style: {
           background: '#333',

@@ -34,6 +34,7 @@ const Slider = () => {
   return (
     <section className='relative  overflow-hidden lg:min-h-[50vh] lg:w-full  '>
       <img
+      loading='lazy'
         style={{ opacity: opacity, transform: `translateX(${translate})` }}
         src={images[imgIndex]}
         className='aspect-[16/4]  transition-all duration-500   ease-in-out lg:m-auto lg:aspect-auto  lg:max-h-96 lg:min-h-full lg:min-w-full lg:max-w-lg lg:object-contain'

@@ -12,6 +12,7 @@ const CartDetails = ({ id, title, description, price, quantity, images, categori
               className='flex h-24 w-24 items-center justify-center rounded-md bg-gray-400/60 p-5'
             >
               <img
+              loading='lazy'
                 className=' mx-auto w-full  rounded-md object-contain'
                 /* src={`http://localhost:1337${i?.attributes?.url} `} */
                 src={`https://ecommercestrapi-back-production.up.railway.app${i?.attributes?.url} `}

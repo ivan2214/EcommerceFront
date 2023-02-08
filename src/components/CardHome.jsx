@@ -23,6 +23,7 @@ const CardHome = ({ name, logo }) => {
         {!loading ? (
           <Link to={`/products/${name}`} onClick={upScroll} className=' w-full'>
             <img
+            loading='lazy'
               className='h-[100px] max-h-[100px]   w-full rounded-lg object-contain'
               src={logo}
               alt=''

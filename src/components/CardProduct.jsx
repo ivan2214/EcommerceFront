@@ -27,7 +27,8 @@ const CardProduct = ({ title, description, price, image, id }) => {
         {!loading ? (
           <Link to={`/product/${id}`} className=' w-full'>
             <img
-              className='h-[150px] max-h-[150px]  min-h-[100px] w-full rounded-md object-contain'
+            loading='lazy'
+              className='h-[150px] min-w-[208px] mx-auto max-h-[200px]  min-h-[50px] w-full rounded-md object-cover'
               src={image}
               alt={description}
             />

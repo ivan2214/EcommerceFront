@@ -103,6 +103,7 @@ const Cart = () => {
                   {/* imagen y titulo */}
                   <div className='flex flex-col gap-5 lg:flex-row'>
                     <img
+                    loading='lazy'
                       className='
                       m-auto
                       max-h-[150px] w-full 

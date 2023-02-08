@@ -77,6 +77,7 @@ const NavBar = () => {
       >
         <Link to='/' className='hidden rounded-3xl lg:flex'>
           <img
+          loading='lazy'
             className='hidden max-h-12 w-full rounded-3xl object-cover  lg:flex lg:max-h-[50px]'
             src={img}
             alt=''
