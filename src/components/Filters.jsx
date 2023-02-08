@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom'
 import './Filters.css'
 import { toast } from 'react-hot-toast'
 import { SortArray } from '@/utils/sortedArray'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const Filters = () => {
   const { name, cat } = useParams()
@@ -147,14 +147,14 @@ const Filters = () => {
     <>
       <div className='flex flex-col items-center gap-5 py-5 px-5 lg:hidden'>
         <button
-          className='w-full max-w-[150px] rounded-full border-2 bg-white py-1 px-6 font-normal text-green-400 shadow-sm  md:max-w-[250px]'
+          className='w-full max-w-[150px] rounded-full border-2 bg-white py-1 px-6 font-normal text-purple-700 shadow-sm  md:max-w-[250px]'
           onClick={() => setOpenFiltersOrder(!openFiltersOrder)}
         >
           Orden
         </button>
 
         <button
-          className='w-full max-w-[150px] rounded-full border-2 bg-white py-1 px-6 font-normal text-green-400 shadow-sm  md:max-w-[250px]'
+          className='w-full max-w-[150px] rounded-full border-2 bg-white py-1 px-6 font-normal text-purple-700 shadow-sm  md:max-w-[250px]'
           onClick={() => setOpenFiltersCategory(!openFiltersCategory)}
         >
           Categorias
@@ -162,52 +162,68 @@ const Filters = () => {
       </div>
 
       {/* filters mobile */}
-
-      {openFiltersCategory ? (
-        <section className=' my-5 w-full border border-white px-5  py-10 shadow-sm'>
-          {categories.map((c) => {
-            return (
-              <div key={c.id} className='flex items-center gap-5'>
-                <input
-                  onChange={(e) => handleChange(e)}
-                  type='checkbox'
-                  className='text-gray-800'
-                  value={c?.attributes?.name}
-                  id={c?.attributes?.name}
-                  name='category'
-                  checked={filters?.category.includes(c?.attributes?.name)}
-                />
-                <label htmlFor={c?.attributes?.name}>{c?.attributes?.name}</label>
-              </div>
-            )
-          })}
-        </section>
-      ) : (
-        <></>
-      )}
-
-      {openFiltersOrder ? (
-        <section className=' my-5 w-full border border-white px-5 py-5 shadow-sm'>
-          <select
-            value={order || 'order'}
-            onChange={({ target }) => handleChangeOrder(target)}
-            className='max-w-[150px]  select-none appearance-none rounded-md bg-purple-700 py-1 px-3 text-white'
-            id=''
+      <AnimatePresence>
+        {openFiltersCategory && (
+          <motion.div
+            initial={{ x: -100 }}
+            transition={{ duration: 1 }}
+            animate={{ x: 0 }}
+            exit={{ x: -100 }}
           >
-            <option className='bg-purple-700 text-white' value='order'>
-              Orden
-            </option>
-            <option className='bg-purple-700 text-white' value='asc'>
-              mayor+
-            </option>
-            <option className='bg-purple-700 text-white' value='desc'>
-              menor-
-            </option>
-          </select>
-        </section>
-      ) : (
-        <></>
-      )}
+            <motion.section
+              initial='hidden'
+              animate='visible'
+              variants={list}
+              className=' my-5 w-full border border-white px-5  py-10 shadow-sm'
+            >
+              {categories.map((c) => {
+                return (
+                  <motion.div variants={item} key={c.id} className='flex items-center gap-5'>
+                    <input
+                      onChange={(e) => handleChange(e)}
+                      type='checkbox'
+                      className='text-gray-800'
+                      value={c?.attributes?.name}
+                      id={c?.attributes?.name}
+                      name='category'
+                      checked={filters?.category.includes(c?.attributes?.name)}
+                    />
+                    <label htmlFor={c?.attributes?.name}>{c?.attributes?.name}</label>
+                  </motion.div>
+                )
+              })}
+            </motion.section>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {openFiltersOrder && (
+          <motion.section
+            initial={{ x: -100 }}
+            transition={{ duration: 1 }}
+            animate={{ x: 0 }}
+            exit={{ x: -100 }}
+            className=' my-5 w-full border border-white px-5 py-5 shadow-sm'
+          >
+            <motion.select
+              value={order || 'order'}
+              onChange={({ target }) => handleChangeOrder(target)}
+              className='max-w-[150px]  select-none appearance-none rounded-md bg-purple-700 py-1 px-3 text-white'
+              id=''
+            >
+              <option className='bg-purple-700 text-white' value='order'>
+                Orden
+              </option>
+              <option className='bg-purple-700 text-white' value='asc'>
+                mayor+
+              </option>
+              <option className='bg-purple-700 text-white' value='desc'>
+                menor-
+              </option>
+            </motion.select>
+          </motion.section>
+        )}
+      </AnimatePresence>
 
       {/* pc */}
 
