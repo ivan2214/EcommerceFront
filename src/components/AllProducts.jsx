@@ -36,7 +36,7 @@ const AllProducts = () => {
             ) : (
               <>
                 {products.map((p) => (
-                  <Skeleton />
+                  <Skeleton key={p.id} />
                 ))}
               </>
             )}
