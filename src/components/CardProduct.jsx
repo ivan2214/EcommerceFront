@@ -1,6 +1,6 @@
 import { addCartProductAsync } from '@/redux/slices/cart/thunk'
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { formatAsARS } from '@/utils/formatNumber'
 import { Link } from 'react-router-dom'
@@ -11,10 +11,10 @@ import { clearDetailProductState } from '@/redux/slices/product/productSlice'
 
 const CardProduct = ({ title, description, price, image, id }) => {
   const dispatch = useDispatch()
+  const { cartItems } = useSelector((s) => s.cart)
   const [loading, setLoading] = useState(false)
   const addCart = () => {
     dispatch(addCartProductAsync(id))
-    dispatch(getTotals())
   }
   const clearDetailState = () => {
     dispatch(clearDetailProductState())
@@ -26,6 +26,10 @@ const CardProduct = ({ title, description, price, image, id }) => {
       setLoading(false)
     }, 1000)
   }, [])
+
+  useEffect(() => {
+    dispatch(getTotals())
+  }, [cartItems])
 
   return (
     <motion.article
