@@ -12,7 +12,7 @@ export const cartSice = createSlice({
   initialState,
   reducers: {
     addToCart(state, action) {
-      const existingIndex = state.cartItems.findIndex((item) => item.id === action.payload.id)
+      const existingIndex = state?.cartItems?.findIndex((item) => item.id === action.payload.id)
       if (existingIndex >= 0) {
         toast.success('Producto incrementado satisfactoriamente!', {
           duration: 2000,
@@ -59,7 +59,7 @@ export const cartSice = createSlice({
       localStorage.setItem('cartItems', JSON.stringify(state.cartItems))
     },
     decreaseCart(state, action) {
-      const itemIndex = state.cartItems.findIndex((item) => item.id === action.payload.id)
+      const itemIndex = state?.cartItems?.findIndex((item) => item.id === action.payload.id)
       toast.error(`Producto decrementado !`, {
         duration: 2000,
         position: 'bottom-left',

@@ -18,7 +18,7 @@ const CardProduct = ({ title, description, price, image, id }) => {
   const { favorites } = useSelector((s) => s.products)
   const [loading, setLoading] = useState(false)
 
-  const conditionFav = favorites.findIndex((f) => f.id === id)
+  const conditionFav = favorites?.findIndex((f) => f.id === id)
 
   const addCart = () => {
     dispatch(addCartProductAsync(id))
@@ -29,7 +29,7 @@ const CardProduct = ({ title, description, price, image, id }) => {
   }
 
   const addFavoriteProduct = (id) => {
-    const index = favorites.findIndex((p) => p.id == id)
+    const index = favorites?.findIndex((p) => p.id == id)
 
     if (index === -1) return dispatch(addFavorite(id))
     if (index >= 0) return dispatch(deleteFavorite(id))

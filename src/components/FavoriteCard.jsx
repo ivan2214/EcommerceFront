@@ -29,7 +29,7 @@ const FavoriteCard = ({ title, price, stock, description, image, id }) => {
   }
 
   const deleteFavoriteProduct = (id) => {
-    const index = favorites.findIndex((p) => p.id == id)
+    const index = favorites?.findIndex((p) => p.id == id)
 
     if (index >= 0) return dispatch(deleteFavorite(id))
   }

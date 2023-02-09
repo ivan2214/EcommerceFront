@@ -40,7 +40,7 @@ export const productsSlice = createSlice({
     addFavorite: (state, action) => {
       const products = [...state?.products]
       const favorites = [...state?.favorites]
-      const findProduct = products.find((p) => p?.id === action?.payload)
+      const findProduct = products?.find((p) => p?.id === action?.payload)
       const index = favorites?.findIndex((p) => p?.id === findProduct?.id)
 
       if (index !== -1) {
