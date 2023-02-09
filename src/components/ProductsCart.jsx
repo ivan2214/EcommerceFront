@@ -19,7 +19,7 @@ const Cart = () => {
 
   useEffect(() => {
     dispatch(getTotals())
-  }, [cart, dispatch])
+  }, [cart])
 
   const text =
     `Hola! Te paso mi pedido: 
@@ -103,7 +103,7 @@ const Cart = () => {
                   {/* imagen y titulo */}
                   <div className='flex flex-col gap-5 lg:flex-row'>
                     <img
-                    loading='lazy'
+                      loading='lazy'
                       className='
                       m-auto
                       max-h-[150px] w-full 
@@ -136,7 +136,7 @@ const Cart = () => {
                   {/* quantity */}
                   <div className='flex flex-col items-center gap-3'>
                     <h3 className='text-base font-bold  uppercase '>Cantidad</h3>
-                    <div className='flex w-[130px] max-w-full items-start justify-center gap-10 rounded-md bg-purple-500/60 text-white px-5 py-1 shadow-lg'>
+                    <div className='flex w-[130px] max-w-full items-start justify-center gap-10 rounded-md bg-purple-500/60 px-5 py-1 text-white shadow-lg'>
                       <button onClick={() => handleDecreaseCart(cartItem)}>-</button>
                       <div className=''>{cartItem?.cartQuantity}</div>
                       <button onClick={() => handleAddToCart(cartItem)}>+</button>
@@ -151,7 +151,7 @@ const Cart = () => {
               ))}
           </div>
 
-          <div className='flex p-10 flex-col-reverse lg:flex-row items-center lg:items-stretch justify-center gap-10  bg-gray-100 lg:p-4 lg:justify-between'>
+          <div className='flex flex-col-reverse items-center justify-center gap-10 bg-gray-100 p-10 lg:flex-row  lg:items-stretch lg:justify-between lg:p-4'>
             <div className=' lg:p-5'>
               <button
                 className='w-full rounded-md bg-purple-700 py-2 px-8 text-white transition-all duration-300 ease-linear hover:bg-purple-500'
@@ -177,7 +177,7 @@ const Cart = () => {
                   href={`https://wa.me/3812516597?text=${encodeURIComponent(text)}`}
                   target='_blank'
                   onClick={purchaseCart}
-                  className='rounded-md cursor-pointer bg-green-400 px-8 py-2 text-white transition-all duration-300 ease-linear hover:bg-green-700 text-center'
+                  className='cursor-pointer rounded-md bg-green-400 px-8 py-2 text-center text-white transition-all duration-300 ease-linear hover:bg-green-700'
                 >
                   Seguir Compra en Wp
                 </a>
@@ -185,7 +185,7 @@ const Cart = () => {
               <div className='flex text-gray-400'>
                 <Link
                   to='/'
-                  className='flex gap-5 text-gray-400 transition-all duration-300 ease-linear hover:text-gray-800 p-5 lg:p-0'
+                  className='flex gap-5 p-5 text-gray-400 transition-all duration-300 ease-linear hover:text-gray-800 lg:p-0'
                 >
                   <svg
                     xmlns='http://www.w3.org/2000/svg'

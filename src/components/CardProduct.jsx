@@ -1,23 +1,38 @@
 import { addCartProductAsync } from '@/redux/slices/cart/thunk'
+
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
+import { MdOutlineFavoriteBorder } from 'react-icons/md'
 import { formatAsARS } from '@/utils/formatNumber'
 import { Link } from 'react-router-dom'
 import SkeletonImage from './SkeletonImage'
 import { motion } from 'framer-motion'
 import { getTotals } from '@/redux/slices/cart/cartSlice'
 import { clearDetailProductState } from '@/redux/slices/product/productSlice'
+import { addFavorite, deleteFavorite } from '@/redux/slices/products/productsSlice'
+import SvgCorazon from '@/Icons/SvgCorazon'
 
 const CardProduct = ({ title, description, price, image, id }) => {
   const dispatch = useDispatch()
   const { cartItems } = useSelector((s) => s.cart)
+  const { favorites } = useSelector((s) => s.products)
   const [loading, setLoading] = useState(false)
+
+  const conditionFav = favorites.findIndex((f) => f.id === id)
+
   const addCart = () => {
     dispatch(addCartProductAsync(id))
   }
+
   const clearDetailState = () => {
     dispatch(clearDetailProductState())
+  }
+
+  const addFavoriteProduct = (id) => {
+    const index = favorites.findIndex((p) => p.id == id)
+
+    if (index === -1) return dispatch(addFavorite(id))
+    if (index >= 0) return dispatch(deleteFavorite(id))
   }
 
   useEffect(() => {
@@ -29,18 +44,20 @@ const CardProduct = ({ title, description, price, image, id }) => {
 
   useEffect(() => {
     dispatch(getTotals())
-  }, [cartItems])
+  }, [cartItems.length])
 
   return (
     <motion.article
       initial={{ x: 100 }}
       animate={{ x: 0 }}
       transition={{ duration: 1 }}
-      className='h-full rounded-md lg:max-h-[700px] lg:min-h-[500px] lg:w-96 lg:max-w-xs '
+      className={`relative h-full rounded-md lg:max-h-[700px] lg:min-h-[500px] lg:w-96 lg:max-w-xs ${
+        conditionFav !== -1 && 'border border-purple-600'
+      } `}
     >
       <div className='flex h-full flex-col  items-center  justify-between '>
         {!loading ? (
-          <Link to={`/product/${id}`} onClick={clearDetailState} className=' w-full'>
+          <Link to={`/product/${id}`} onClick={clearDetailState} className=' '>
             <motion.img
               initial={{ scale: 0.2 }}
               animate={{ scale: 1 }}
@@ -76,6 +93,14 @@ const CardProduct = ({ title, description, price, image, id }) => {
             Agregar
           </button>
         </div>
+      </div>
+      <div className='absolute top-0 right-0'>
+        <button
+          onClick={() => addFavoriteProduct(id)}
+          className={` rounded-full border-purple-700  text-center  font-bold  text-purple-700 transition-all duration-300 hover:rounded-full hover:text-purple-700 `}
+        >
+          <SvgCorazon className={`${conditionFav !== -1 && 'text-purple-500 '} rounded-full `} />
+        </button>
       </div>
     </motion.article>
   )

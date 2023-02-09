@@ -122,9 +122,15 @@ const NavBar = () => {
                   <FaStoreAlt size={30} />
                 </Link>
               </motion.li>
-              <motion.li variants={item2}>
+              <motion.li className='relative' variants={item2}>
                 <Link to='/cart'>
-                  <AiOutlineShoppingCart size={30} />
+                  <AiOutlineShoppingCart
+                    size={30}
+                    className=' text-2xl transition-all duration-500 ease-linear hover:origin-top hover:rotate-12'
+                  />
+                  <span className='absolute -top-[12px] -right-[2px] text-white '>
+                    {cartTotalQuantity}
+                  </span>
                 </Link>
               </motion.li>
             </motion.ul>
@@ -203,15 +209,6 @@ const NavBar = () => {
               onClick={upScroll}
               className='hidden items-center  gap-3 font-sans text-lg font-semibold text-white transition-all duration-500 hover:text-gray-500 lg:flex'
             >
-              <Link className='flex items-center justify-center gap-2' to='/favorite'>
-                <MdOutlineFavoriteBorder className='text-2xl transition-all duration-500 ease-linear hover:origin-top hover:rotate-12 hover:text-gray-500' />
-                favoritos
-              </Link>
-            </li>
-            <li
-              onClick={upScroll}
-              className='hidden items-center  gap-3 font-sans text-lg font-semibold text-white transition-all duration-500 hover:text-gray-500 lg:flex'
-            >
               <Link className='flex items-center justify-center gap-2' to='/products'>
                 <FaStoreAlt className='text-2xl transition-all duration-500 ease-linear hover:origin-top hover:rotate-12 hover:text-gray-500' />
                 Tienda
@@ -219,20 +216,34 @@ const NavBar = () => {
             </li>
             <li
               onClick={upScroll}
-              className=' hidden items-center gap-3 font-sans text-lg font-semibold text-white transition-all duration-500 hover:text-gray-500 lg:flex'
+              className='hidden items-center  gap-3 font-sans text-lg font-semibold text-white transition-all duration-500 hover:text-gray-500 lg:flex'
             >
-              <Link className='flex items-center justify-center gap-2' to='/account'>
-                <AiOutlineUser className='text-2xl transition-all duration-500 ease-linear hover:origin-top hover:rotate-12 hover:text-gray-500' />
-                Cuenta
+              <Link className='flex items-center justify-center gap-2' to='/favorite'>
+                <MdOutlineFavoriteBorder className='text-2xl transition-all duration-500 ease-linear hover:origin-top hover:rotate-12 ' />
+                favoritos
               </Link>
             </li>
             <li
               onClick={upScroll}
-              className='relative hidden select-none items-center gap-3 font-sans  text-lg font-semibold text-white transition-all duration-500 hover:text-gray-500 lg:relative lg:flex'
+              className=' hidden items-center gap-3 font-sans text-lg font-semibold text-white transition-all duration-500 hover:text-gray-500 lg:flex'
             >
-              <Link className='flex items-center justify-center gap-2' to='/cart'>
-                <AiOutlineShoppingCart className='text-2xl transition-all duration-500 ease-linear hover:origin-top hover:rotate-12 hover:text-gray-500' />
-                <span className=':absolute :top-[-15px] :right-[-7px] text-white '>
+              <Link
+                className='flex items-center justify-center gap-2 transition-all duration-300 hover:text-gray-500'
+                to='/account'
+              >
+                <AiOutlineUser className='text-2xl transition-all duration-500 ease-linear hover:origin-top hover:rotate-12 ' />
+              </Link>
+            </li>
+            <li
+              onClick={upScroll}
+              className='relative  hidden select-none items-center gap-3  font-sans text-lg font-semibold text-white transition-all duration-500 hover:text-gray-500  lg:flex'
+            >
+              <Link
+                className=' flex items-center justify-center gap-2 transition-all duration-300 '
+                to='/cart'
+              >
+                <AiOutlineShoppingCart className='top-0 text-2xl transition-all duration-500 ease-linear hover:origin-top hover:rotate-12' />
+                <span className='absolute text-white lg:-top-[17px] lg:-right-1 '>
                   {cartTotalQuantity}
                 </span>
               </Link>

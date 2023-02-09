@@ -71,7 +71,7 @@ const Filters = () => {
     })
     setOrder('')
   }
-  console.log(filters)
+
   useEffect(() => {
     if (filters.brand.length > 0 || filters.category.length > 0) {
       filter()
@@ -110,8 +110,8 @@ const Filters = () => {
         style: {},
         className: '',
         style: {
-          background: '#333',
-          color: '#fff',
+          background: '##111827',
+          color: '#ffffff',
         },
       },
     )

@@ -23,8 +23,8 @@ export const cartSice = createSlice({
           style: {},
           className: '',
           style: {
-            background: '#333',
-            color: '#fff',
+            background: '#111827',
+            color: '#ffffff',
           },
 
           // Custom Icon
@@ -45,8 +45,8 @@ export const cartSice = createSlice({
           style: {},
           className: '',
           style: {
-            background: '#333',
-            color: '#fff',
+            background: '#111827',
+            color: '#ffffff',
           },
 
           // Custom Icon
@@ -69,8 +69,8 @@ export const cartSice = createSlice({
         style: {},
         className: '',
         style: {
-          background: '#333',
-          color: '#fff',
+          background: '#111827',
+          color: '#ffffff',
         },
         // Custom Icon
 
@@ -120,6 +120,22 @@ export const cartSice = createSlice({
     clearCart(state, action) {
       state.cartItems = []
       localStorage.setItem('cartItems', JSON.stringify(state.cartItems))
+      toast.success(`Carrito Eliminado!`, {
+        duration: 2000,
+        position: 'bottom-left',
+        reverseOrder: true,
+
+        // Styling
+        style: {},
+        className: '',
+        style: {
+          background: '#111827',
+          color: '#ffffff',
+        },
+        // Custom Icon
+
+        // Change colors of success/error/loading icon
+      })
     },
   },
 })

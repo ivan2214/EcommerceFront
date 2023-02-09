@@ -11,9 +11,9 @@ const AllProducts = () => {
   return (
     <section className='lg:max-w-5 xl  lg:mx-auto lg:min-h-screen  lg:py-5'>
       <motion.section className='grid h-full w-full  grid-cols-[repeat(auto-fit,minmax(360px,1fr))] gap-x-4 gap-y-16 overflow-hidden bg-gray-100  px-5 shadow-sm  lg:grid-cols-3'>
-        {products.length && !loading ? (
+        {products?.length && !loading ? (
           <>
-            {products.map((p) => {
+            {products?.map((p) => {
               return (
                 <CardProduct
                   key={p.id}
@@ -29,13 +29,13 @@ const AllProducts = () => {
           </>
         ) : (
           <>
-            {!products.length ? (
+            {!products?.length ? (
               <div>
                 <p>Lo sentimos no contamos con esos productos</p>
               </div>
             ) : (
               <>
-                {products.map((p) => (
+                {products?.map((p) => (
                   <Skeleton key={p.id} />
                 ))}
               </>
