@@ -38,11 +38,10 @@ const Categories = () => {
         variants={list}
         className='grid h-full w-full grid-cols-[repeat(auto-fit,minmax(150px,1fr))] place-items-center  gap-16  py-5'
       >
-        {categories.map((c) => {
+        {categories.map((c, i) => {
           return (
-            <motion.div variants={item}>
+            <motion.div key={`${c.id}${i}`} variants={item}>
               <CardCategory
-                key={c.id}
                 name={c?.attributes?.name}
                 image={`https://ecommercestrapi-back-production.up.railway.app${c?.attributes?.image?.data[0]?.attributes?.url} `}
               />

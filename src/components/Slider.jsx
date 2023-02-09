@@ -31,7 +31,6 @@ const Slider = () => {
             <>
               {imgIndex === indx && (
                 <motion.img
-                  key={indx + i}
                   src={images[imgIndex]}
                   initial={{ x: pointer == 'left' ? 300 : -300, opacity: 0.5 }}
                   animate={{ x: 0, opacity: 1 }}

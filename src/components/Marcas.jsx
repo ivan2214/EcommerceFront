@@ -41,9 +41,8 @@ const Marcas = () => {
         {brands ? (
           brands.map(({ id, attributes }, i) => {
             return (
-              <motion.div variants={item}>
+              <motion.div key={id} variants={item}>
                 <CardHome
-                  key={id}
                   id={id}
                   name={attributes?.name}
                   /* logo={`http://localhost:1337${attributes?.logo?.data[0]?.attributes?.url} `} */
