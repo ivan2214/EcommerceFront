@@ -67,8 +67,8 @@ const FavoriteCard = ({ title, price, stock, description, image, id }) => {
             </span>
           </div>
           {/* btns */}
-          <div className='flex flex-col-reverse items-start justify-start gap-5 lg:w-fit lg:flex-col'>
-            <div className='flex w-full flex-col gap-2 lg:ml-auto lg:flex-row lg:items-start lg:justify-start'>
+          <div className='flex flex-col-reverse items-start justify-start gap-5 lg:ml-auto lg:w-fit lg:flex-col'>
+            <div className='flex w-full flex-col gap-2  lg:flex-row lg:items-start lg:justify-start'>
               <button className='w-full min-w-full max-w-full rounded-full border border-purple-600/80 px-8 py-1 text-purple-600 transition-all duration-300 ease-linear hover:bg-purple-600 hover:text-white lg:min-w-[200px]'>
                 Comprar Ahora
               </button>
