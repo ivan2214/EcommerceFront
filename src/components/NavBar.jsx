@@ -176,26 +176,30 @@ const NavBar = () => {
       mx-auto
        w-full max-w-screen-xl    flex-col    gap-5 overflow-hidden bg-gray-900 px-5  shadow-lg  lg:flex  lg:h-max lg:translate-x-0 lg:flex-row lg:items-center lg:justify-between lg:py-1`}
       >
-        <motion.div variants={item}>
-          <Link to='/' className='hidden rounded-3xl lg:flex'>
+        <motion.div className='' variants={item}>
+          <Link
+            to='/'
+            className=' hidden rounded-full lg:flex lg:items-center lg:justify-center lg:gap-3'
+          >
             <img
               loading='lazy'
-              className='hidden max-h-12 w-full rounded-3xl object-cover  lg:flex lg:max-h-[70px]'
+              className='hidden max-h-12  rounded-full object-cover  lg:flex '
               src={img}
               alt=''
             />
+            <h1 className='text-2xl font-bold text-white'>News Game Tuc</h1>
           </Link>
         </motion.div>
 
         <motion.form
           variants={item}
           onSubmit={handleSubmit}
-          className='hidden w-full items-center justify-center gap-5 lg:mx-auto lg:flex'
+          className='hidden  items-center justify-center gap-5 lg:mx-auto lg:flex'
         >
           <input
             type='search'
             onChange={({ target }) => handleSearch(target)}
-            className='w-[50%]  rounded-lg border border-gray-400 px-5 py-1 text-gray-900 outline-none transition-all duration-500 lg:focus:outline-gray-200 '
+            className=' rounded-lg border border-gray-400 px-5 py-1 text-gray-900 outline-none transition-all duration-500 lg:focus:outline-gray-200 '
             placeholder='Buscar..'
             name=''
             id=''
