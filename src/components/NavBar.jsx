@@ -195,7 +195,7 @@ const NavBar = () => {
           <input
             type='search'
             onChange={({ target }) => handleSearch(target)}
-            className='w-[50%] rounded-lg border border-gray-400 px-5 py-1 text-gray-900 outline-none transition-all duration-500 '
+            className='w-[50%]  rounded-lg border border-gray-400 px-5 py-1 text-gray-900 outline-none transition-all duration-500 lg:focus:outline-gray-200 '
             placeholder='Buscar..'
             name=''
             id=''
