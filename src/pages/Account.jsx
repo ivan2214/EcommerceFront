@@ -6,13 +6,15 @@ const Account = () => {
       <div className='flex w-full  flex-col flex-wrap items-start justify-center gap-5 lg:p-10'>
         <h4 className='font-light '>Mi cuenta / Account</h4>
         {/* Datos de la cuenta */}
-        <section className='flex  w-full min-w-full max-w-xs flex-col items-start justify-center gap-5 bg-white p-10 shadow-xl'>
+        <section className='flex w-full min-w-full  max-w-xs flex-col items-start justify-center gap-5 bg-white p-11  shadow-xl lg:p-0'>
           <h2 className='text-xl font-bold uppercase'>Datos de la cuenta</h2>
-          <div className='flex w-full flex-col items-start justify-center gap-5'>
+          <div className=' flex w-full flex-col items-start justify-center gap-5'>
             {/* correeo */}
-            <div className='flex w-full items-center justify-between gap-5'>
+            <div className='flex w-full flex-wrap items-center justify-between gap-5'>
               <h3 className='text-base font-normal text-purple-500'>Usuario</h3>
-              <p className='text-base font-normal text-purple-500'>example@gmail.com</p>
+              <p className='w-[55%] text-right text-base font-normal text-purple-500 lg:max-w-max'>
+                bongiovanniivan12@gmail.com
+              </p>
             </div>
             {/* contraseñ */}
             <div className='flex w-full items-center justify-between gap-5'>
@@ -22,7 +24,7 @@ const Account = () => {
           </div>
         </section>
         {/* Datos Personales */}
-        <section className='flex  w-full min-w-full max-w-xs flex-col items-start justify-center gap-5 bg-white p-10 shadow-xl'>
+        <section className='flex w-full min-w-full  max-w-xs flex-col items-start justify-center gap-5 bg-white p-11  shadow-xl lg:p-0'>
           <h2 className='text-xl font-bold uppercase'>Datos personales</h2>
           <div className='flex w-full flex-col items-start justify-center gap-5'>
             {/* Nombre */}
@@ -48,7 +50,7 @@ const Account = () => {
           </div>
         </section>
         {/* Datos de envío */}
-        <section className='flex  w-full min-w-full max-w-xs flex-col items-start justify-center gap-5 bg-white p-10 shadow-xl'>
+        <section className='flex w-full min-w-full  max-w-xs flex-col items-start justify-center gap-5 bg-white p-11  shadow-xl lg:p-0'>
           <h2 className='text-xl font-bold uppercase'>Datos de envío</h2>
           <div className='flex w-full flex-col items-start justify-center gap-5'>
             {/* Calle */}
