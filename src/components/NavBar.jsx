@@ -96,11 +96,11 @@ const NavBar = () => {
           >
             {!open ? (
               <button className=' text-white' onClick={() => setOpen(!open)}>
-                <AiOutlineMenu size={30} />
+                <AiOutlineMenu size={22} />
               </button>
             ) : (
               <button className=' text-white' onClick={() => setOpen(!open)}>
-                <AiOutlineClose size={30} />
+                <AiOutlineClose size={22} />
               </button>
             )}
           </motion.div>
@@ -110,24 +110,31 @@ const NavBar = () => {
               initial='hidden'
               animate='visible'
               variants={list2}
-              className='flex items-center justify-center gap-5 px-5 lg:hidden '
+              className='flex items-center justify-center gap-3 px-5 lg:hidden'
             >
               <motion.li variants={item2}>
                 <Link to='/' className=''>
-                  <AiFillHome size={30} />
+                  <AiFillHome size={22} />
+                </Link>
+              </motion.li>
+              <motion.li variants={item2}>
+                <Link to='/favorite'>
+                  <MdOutlineFavoriteBorder size={22} />
                 </Link>
               </motion.li>
               <motion.li variants={item2}>
                 <Link to='/products'>
-                  <FaStoreAlt size={30} />
+                  <FaStoreAlt size={22} />
+                </Link>
+              </motion.li>
+              <motion.li variants={item2}>
+                <Link to='/account'>
+                  <AiOutlineUser size={22} />
                 </Link>
               </motion.li>
               <motion.li className='relative' variants={item2}>
                 <Link to='/cart'>
-                  <AiOutlineShoppingCart
-                    size={30}
-                    className=' text-2xl transition-all duration-500 ease-linear hover:origin-top hover:rotate-12'
-                  />
+                  <AiOutlineShoppingCart size={22} className='' />
                   <span className='absolute -top-[12px] -right-[2px] text-white '>
                     {cartTotalQuantity}
                   </span>
