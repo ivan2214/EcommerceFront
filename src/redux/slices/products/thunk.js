@@ -43,8 +43,8 @@ export const searchProductAsync = (query) => {
   return async function (dispatch) {
     /* const url = 'p.image/api' */
     const url = "http://localhost:3001/api";
-    const res = await axios.get(`${url}/products?filters[title][$contains]=${query}&populate=*`);
-    const data = res.data.data;
+    const res = await axios.get(`${url}/products/search?q=${query}`);
+    const data = res.data;
     dispatch(loadingState(true));
     dispatch(searchProduct(data));
     dispatch(loadingState(false));
