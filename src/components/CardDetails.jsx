@@ -1,37 +1,32 @@
-import { formatAsARS } from '@/utils/formatNumber'
-import React from 'react'
-import Loading from './Loading'
-import SkeletonImage from './SkeletonImage'
+import { formatAsARS } from "@/utils/formatNumber";
+import React from "react";
+import Loading from "./Loading";
+import SkeletonImage from "./SkeletonImage";
 
-const CartDetails = ({ id, title, description, price, quantity, images, categories, loading }) => {
+const CartDetails = ({ id, title, description, price, quantity, image, categories, loading }) => {
+  console.log(image);
   return (
     <>
-      {!loading || !images || !title || !description || !images.data.length || isNaN(price) ? (
-        <div className=' mx-auto flex h-full  w-full max-w-6xl flex-col justify-center gap-10 lg:flex-row  '>
-          <div className='flex h-full items-center justify-start gap-5  px-8 lg:flex-col lg:items-start  lg:justify-between'>
-            {images?.data?.map((i, index) => {
-              return (
-                <div
-                  key={id}
-                  className='flex h-24 w-24 items-center justify-center rounded-md bg-gray-400/60 p-5'
-                >
-                  <img
-                    loading='lazy'
-                    className=' mx-auto w-full  rounded-md object-contain'
-                    /* src={`http://localhost:1337${i?.attributes?.url} `} */
-                    src={`https://ecommercestrapi-back-production.up.railway.app${i?.attributes?.url} `}
-                    alt=''
-                  />
-                </div>
-              )
-            })}
+      {!loading || !image || !title || !description || !image.data.length || isNaN(price) ? (
+        <div className=' mx-auto flex h-full  w-full max-w-6xl flex-col justify-center gap-10 md:flex-row  '>
+          <div className='flex h-full items-center justify-start gap-5  px-8 md:flex-col md:items-start  md:justify-between'>
+            <div
+              key={id}
+              className='flex h-24 w-24 items-center justify-center rounded-md bg-gray-400/60 p-5'
+            >
+              <img
+                loading='lazy'
+                className=' mx-auto w-full  rounded-md object-contain'
+                src={image}
+                alt=''
+              />
+            </div>
           </div>
           <section className='flex h-full min-h-[200px] w-full max-w-3xl rounded-md  '>
-            {!images?.data[0]?.length || !images.data || !title ? (
+            {image ? (
               <img
                 className='  h-full  min-h-[100px] w-full rounded-md object-cover'
-                /* src={`http://localhost:1337${dataImage[0].attributes.url} `} */
-                src={`https://ecommercestrapi-back-production.up.railway.app${images?.data[0]?.attributes?.url} `}
+                src={image}
                 alt={description}
               />
             ) : (
@@ -45,7 +40,7 @@ const CartDetails = ({ id, title, description, price, quantity, images, categori
                 <p className='py-5 text-left text-base font-light'>{description}</p>
                 <span>{formatAsARS(price)}</span>
                 <span className='rounded-full bg-purple-500 px-5 text-white'>
-                  {quantity > 0 && 'En stock.'}
+                  {quantity > 0 && "En stock."}
                 </span>
               </div>
 
@@ -62,7 +57,7 @@ const CartDetails = ({ id, title, description, price, quantity, images, categori
         <Loading />
       )}
     </>
-  )
-}
+  );
+};
 
-export default CartDetails
+export default CartDetails;

@@ -18,7 +18,7 @@ const CardProduct = ({ title, description, price, image, id }) => {
   const { favorites } = useSelector((s) => s.products)
   const [loading, setLoading] = useState(false)
 
-  const conditionFav = favorites?.findIndex((f) => f.id === id)
+  const conditionFav = favorites?.findIndex((f) => f._id === id)
 
   const addCart = () => {
     dispatch(addCartProductAsync(id))
@@ -29,7 +29,7 @@ const CardProduct = ({ title, description, price, image, id }) => {
   }
 
   const addFavoriteProduct = (id) => {
-    const index = favorites?.findIndex((p) => p.id == id)
+    const index = favorites?.findIndex((p) => p._id == id)
 
     if (index === -1) return dispatch(addFavorite(id))
     if (index >= 0) return dispatch(deleteFavorite(id))
@@ -51,7 +51,7 @@ const CardProduct = ({ title, description, price, image, id }) => {
       initial={{ x: 100 }}
       animate={{ x: 0 }}
       transition={{ duration: 1 }}
-      className={`relative h-full rounded-md lg:max-h-[700px] lg:min-h-[500px] lg:w-96 lg:max-w-xs ${
+      className={`relative h-full rounded-md md:max-h-[700px] md:min-h-[500px] md:w-96 md:max-w-xs ${
         conditionFav !== -1 && 'border border-purple-600'
       } `}
     >

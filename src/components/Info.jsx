@@ -26,9 +26,9 @@ const Info = () => {
     hidden: { opacity: 0, x: -100 },
   }
   return (
-    <section className='mx-auto flex h-full w-full max-w-6xl flex-col  py-5 px-5 lg:px-0'>
+    <section className='mx-auto flex h-full w-full max-w-6xl flex-col  py-5 px-5 md:px-0'>
       <h2 className='text-left text-3xl font-bold text-purple-700 '>Nuestros Servicios</h2>
-      <article className='flex h-full w-full flex-col items-center justify-start gap-10 p-10 lg:flex-row'>
+      <article className='flex h-full w-full flex-col items-center justify-start gap-10 p-10 md:flex-row'>
         <div className='flex  items-center justify-start'>
           <img src={armado} alt='' className='max-h-[200px] w-full max-w-xs rounded-full' />
         </div>

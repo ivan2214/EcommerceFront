@@ -3,7 +3,7 @@ import React from 'react'
 const Account = () => {
   return (
     <section className='m-0 mx-auto min-h-screen w-full max-w-screen-xl overflow-hidden bg-slate-100 p-0 text-gray-900'>
-      <div className='flex w-full  flex-col flex-wrap items-start justify-center gap-5 lg:p-10'>
+      <div className='flex w-full  flex-col flex-wrap items-start justify-center gap-5 md:p-10'>
         <h4 className='font-light '>Mi cuenta / Account</h4>
         {/* Datos de la cuenta */}
         <section className='flex w-full min-w-full  max-w-xs flex-col items-start justify-center gap-5 bg-white p-11  shadow-xl '>
@@ -12,7 +12,7 @@ const Account = () => {
             {/* correeo */}
             <div className='flex w-full flex-wrap items-center justify-between gap-5'>
               <h3 className='text-base font-normal text-purple-500'>Usuario</h3>
-              <p className='w-[55%] text-right text-base font-normal text-purple-500 lg:max-w-max'>
+              <p className='w-[55%] text-right text-base font-normal text-purple-500 md:max-w-max'>
                 bongiovanniivan12@gmail.com
               </p>
             </div>

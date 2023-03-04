@@ -1,30 +1,30 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'
-import { motion, AnimatePresence } from 'framer-motion'
-import { images } from '@/Sources/images'
+import React, { useEffect, useRef, useState } from "react";
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import { motion, AnimatePresence } from "framer-motion";
+import { images } from "@/Sources/images";
 
 const Slider = () => {
-  const [imgIndex, setImgIndex] = useState(0)
-  const [pointer, setPointer] = useState('rigth')
+  const [imgIndex, setImgIndex] = useState(0);
+  const [pointer, setPointer] = useState("rigth");
 
   const prevImage = () => {
-    setImgIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))
-    setPointer('left')
-  }
+    setImgIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setPointer("left");
+  };
   const nextImage = () => {
-    setImgIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
-    setPointer('rigth')
-  }
+    setImgIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setPointer("rigth");
+  };
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setImgIndex((prevIndex) => (prevIndex + 1) % images.length)
-    }, 3000)
-    return () => clearInterval(intervalId)
-  }, [])
+      setImgIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
-    <section className='relative  overflow-hidden lg:min-h-[50vh] lg:w-full  '>
+    <section className='relative  overflow-hidden md:min-h-[50vh] md:w-full  '>
       <AnimatePresence>
         {images.map((i, indx) => {
           return (
@@ -32,14 +32,14 @@ const Slider = () => {
               {imgIndex === indx && (
                 <motion.img
                   src={images[imgIndex]}
-                  initial={{ x: pointer == 'left' ? 300 : -300, opacity: 0.5 }}
+                  initial={{ x: pointer == "left" ? 300 : -300, opacity: 0.5 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 1 }}
-                  exit={{ x: pointer == 'left' ? 300 : -300, opacity: 0.5 }}
+                  exit={{ x: pointer == "left" ? 300 : -300, opacity: 0.5 }}
                 />
               )}
             </>
-          )
+          );
         })}
       </AnimatePresence>
 
@@ -52,7 +52,7 @@ const Slider = () => {
         </button>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Slider
+export default Slider;

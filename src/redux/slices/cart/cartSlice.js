@@ -12,7 +12,7 @@ export const cartSice = createSlice({
   initialState,
   reducers: {
     addToCart(state, action) {
-      const existingIndex = state?.cartItems?.findIndex((item) => item.id === action.payload.id)
+      const existingIndex = state?.cartItems?.findIndex((item) => item._id === action.payload._id)
       if (existingIndex >= 0) {
         toast.success('Producto incrementado satisfactoriamente!', {
           duration: 2000,
@@ -59,7 +59,7 @@ export const cartSice = createSlice({
       localStorage.setItem('cartItems', JSON.stringify(state.cartItems))
     },
     decreaseCart(state, action) {
-      const itemIndex = state?.cartItems?.findIndex((item) => item.id === action.payload.id)
+      const itemIndex = state?.cartItems?.findIndex((item) => item._id === action.payload._id)
       toast.error(`Producto decrementado !`, {
         duration: 2000,
         position: 'bottom-left',
@@ -79,7 +79,7 @@ export const cartSice = createSlice({
       if (state.cartItems[itemIndex].cartQuantity > 1) {
         state.cartItems[itemIndex].cartQuantity -= 1
       } else if (state.cartItems[itemIndex].cartQuantity === 1) {
-        const nextCartItems = state.cartItems.filter((item) => item.id !== action.payload.id)
+        const nextCartItems = state.cartItems.filter((item) => item._id !== action.payload._id)
 
         state.cartItems = nextCartItems
       }
@@ -88,8 +88,8 @@ export const cartSice = createSlice({
     },
     removeFromCart(state, action) {
       state.cartItems.map((cartItem) => {
-        if (cartItem.id === action.payload.id) {
-          const nextCartItems = state.cartItems.filter((item) => item.id !== cartItem.id)
+        if (cartItem._id === action.payload._id) {
+          const nextCartItems = state.cartItems.filter((item) => item._id !== cartItem._id)
 
           state.cartItems = nextCartItems
         }
@@ -100,8 +100,8 @@ export const cartSice = createSlice({
     getTotals(state, action) {
       let { total, quantity } = state.cartItems.reduce(
         (cartTotal, cartItem) => {
-          const { attributes, cartQuantity } = cartItem
-          const itemTotal = attributes.price * cartQuantity
+          const { price, cartQuantity } = cartItem
+          const itemTotal = price * cartQuantity
 
           cartTotal.total += itemTotal
           cartTotal.quantity += cartQuantity

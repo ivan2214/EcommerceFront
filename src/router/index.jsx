@@ -9,6 +9,7 @@ import Cart from '@/pages/Cart'
 import Login from '@/pages/Login'
 import ProductDetail from '@/pages/ProductDetail'
 import Favorite from '@/pages/Favorite'
+import AdminPanel from '@/pages/AdminPanel'
 
 const user = {
   autenticated: true,
@@ -43,11 +44,14 @@ export const router = createBrowserRouter([
       },
       {
         path: '/cart',
-        element: <Cart />,
+        element: (
+          <ProtectedRoute isAllowed={!user.admin} redirectTo={'/admin'}>
+            <Cart />
+          </ProtectedRoute>
+        ),
       },
       {
         path: '/account',
-        errorElement: <NotFound />,
         element: (
           <ProtectedRoute isAllowed={user.autenticated} redirectTo={'/login'}>
             <Account />
@@ -56,19 +60,25 @@ export const router = createBrowserRouter([
       },
       {
         path: '/login',
-        errorElement: <NotFound />,
         element: (
-          <ProtectedRoute isAllowed={user.autenticated} redirectTo={'/account'}>
+          <ProtectedRoute redirectTo={'/account'}>
             <Login />
           </ProtectedRoute>
         ),
       },
       {
         path: '/favorite',
-        errorElement: <NotFound />,
         element: (
           <ProtectedRoute isAllowed={user.autenticated} redirectTo={'/login'}>
             <Favorite />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: '/admin',
+        element: (
+          <ProtectedRoute isAllowed={user.admin} redirectTo={'/login'}>
+            <AdminPanel />
           </ProtectedRoute>
         ),
       },

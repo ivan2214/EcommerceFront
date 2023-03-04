@@ -1,0 +1,122 @@
+[
+  {
+    "_id": "63fe4fcf16363a500a0a3660",
+    "title": "Procesador Intel Core i9-11900K",
+    "description": "El procesador Intel Core i9-11900K ofrece un rendimiento increíble para juegos y aplicaciones de alta demanda.",
+    "image": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677637169/backProductosPc/componentes/ryzen5-oem_ctsilx.png",
+    "price": 550,
+    "category": {
+      "_id": "63fead1b223639bc5d2dedad",
+      "name": "Procesadores",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/kingston_muqcyp.jpg",
+      "__v": 0
+    },
+    "brand": {
+      "_id": "63fe4fcf16363a500a0a3661",
+      "name": "Intel",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610382/backProductosPc/Marcas/redragon_lhp8fc.png",
+      "__v": 0
+    },
+    "__v": 0
+  },
+  {
+    "_id": "63fe4fcf16363a500a0a3666",
+    "title": "Disco duro SSD Samsung 970 EVO Plus 1TB",
+    "description": "El disco duro SSD Samsung 970 EVO Plus ofrece una velocidad de lectura y escritura increíblemente rápida y una capacidad de almacenamiento masiva.",
+    "image": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677637169/backProductosPc/componentes/ryzen5-oem_ctsilx.png",
+    "price": 200,
+    "category": {
+      "_id": "63fead1b223639bc5d2dedb5",
+      "name": "Discos duros SSD",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/kingston_muqcyp.jpg",
+      "__v": 0
+    },
+    "brand": {
+      "_id": "63fe4fcf16363a500a0a3667",
+      "name": "Samsung",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/kingston_muqcyp.jpg",
+      "__v": 0
+    },
+    "__v": 0
+  },
+  {
+    "_id": "63fe4fcf16363a500a0a3668",
+    "title": "Placa base ASUS ROG Strix Z590-E Gaming WiFi 6",
+    "description": "La placa base ASUS ROG Strix Z590-E Gaming WiFi 6 ofrece una conectividad rápida y confiable para juegos y aplicaciones de alta demanda.",
+    "image": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677637169/backProductosPc/componentes/ryzen5-oem_ctsilx.png",
+    "price": 350,
+    "category": {
+      "_id": "63fead1b223639bc5d2dedbd",
+      "name": "Placas base",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/kingston_muqcyp.jpg",
+      "__v": 0
+    },
+    "brand": {
+      "_id": "63fe4fcf16363a500a0a3669",
+      "name": "ASUS",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610382/backProductosPc/Marcas/redragon_lhp8fc.png",
+      "__v": 0
+    },
+    "__v": 0
+  },
+  {
+    "_id": "63fe4fcf16363a500a0a366a",
+    "title": "Fuente de alimentación EVGA SuperNOVA 850W",
+    "description": "La fuente de alimentación EVGA SuperNOVA 850W ofrece una potencia confiable para sistemas de alta demanda.",
+    "image": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677637169/backProductosPc/componentes/ryzen5-oem_ctsilx.png",
+    "price": 120,
+    "category": {
+      "_id": "63fead1c223639bc5d2dedc5",
+      "name": "Fuentes de alimentación",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/kingston_muqcyp.jpg",
+      "__v": 0
+    },
+    "brand": {
+      "_id": "63fe4fcf16363a500a0a366b",
+      "name": "EVGA",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610382/backProductosPc/Marcas/redragon_lhp8fc.png",
+      "__v": 0
+    },
+    "__v": 0
+  },
+  {
+    "_id": "63fe4fcf16363a500a0a3664",
+    "title": "Memoria RAM Corsair Vengeance LPX 16GB DDR4 3200MHz",
+    "description": "La memoria RAM Corsair Vengeance LPX ofrece un rendimiento rápido y confiable para juegos y aplicaciones de alta demanda.",
+    "image": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677637169/backProductosPc/componentes/ryzen5-oem_ctsilx.png",
+    "price": 80,
+    "category": {
+      "_id": "63fead1c223639bc5d2dedcd",
+      "name": "Memoria RAM",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/kingston_muqcyp.jpg",
+      "__v": 0
+    },
+    "brand": {
+      "_id": "63fe4fcf16363a500a0a3665",
+      "name": "Corsair",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610382/backProductosPc/Marcas/redragon_lhp8fc.png",
+      "__v": 0
+    },
+    "__v": 0
+  },
+  {
+    "_id": "63fe4fcf16363a500a0a3662",
+    "title": "Tarjeta gráfica NVIDIA GeForce RTX 3080",
+    "description": "La tarjeta gráfica NVIDIA GeForce RTX 3080 ofrece un rendimiento de juego increíble y es compatible con trazado de rayos en tiempo real.",
+    "image": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677637169/backProductosPc/componentes/ryzen5-oem_ctsilx.png",
+    "price": 1100,
+    "category": {
+      "_id": "63fead1c223639bc5d2dedd5",
+      "name": "Tarjetas gráficas",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/kingston_muqcyp.jpg",
+      "__v": 0
+    },
+    "brand": {
+      "_id": "63fe4fcf16363a500a0a3663",
+      "name": "NVIDIA",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610382/backProductosPc/Marcas/redragon_lhp8fc.png",
+      "__v": 0
+    },
+    "__v": 0
+  }
+]

@@ -18,7 +18,7 @@ const CardHome = ({ name, logo }) => {
   }
 
   return (
-    <article className='flex  min-w-[150px] max-w-[150px] flex-col items-center gap-4 rounded-lg p-5 shadow-md lg:w-56  lg:max-w-xs lg:p-6'>
+    <article className='flex  min-w-[150px] max-w-[150px] flex-col items-center gap-4 rounded-lg p-5 shadow-md md:w-56  md:max-w-xs md:p-6'>
       <div className='flex  flex-col  items-center  justify-between '>
         {!loading ? (
           <Link to={`/products/${name}`} onClick={upScroll} className=' w-full'>

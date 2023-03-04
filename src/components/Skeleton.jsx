@@ -2,7 +2,7 @@ import React from 'react'
 
 const Skeleton = () => {
   return (
-    <div class='border  lg:max-w-xs   lg:w-52  overflow-hidden p-5 shadow rounded-md w-full mx-auto'>
+    <div class='border  md:max-w-xs   md:w-52  overflow-hidden p-5 shadow rounded-md w-full mx-auto'>
       <div class='animate-pulse w-full flex flex-col items-center gap-10 h-full space-x-4'>
         <div class='rounded-full bg-slate-700 h-10 w-10'></div>
         <div class='w-full space-y-6 py-1'>
