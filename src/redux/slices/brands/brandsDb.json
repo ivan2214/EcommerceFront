@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "63fe4fcf16363a500a0a3661",
+    "name": "Intel",
+    "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610382/backProductosPc/Marcas/redragon_lhp8fc.png",
+    "__v": 0
+  },
+  {
+    "_id": "63fe4fcf16363a500a0a3667",
+    "name": "Samsung",
+    "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/kingston_muqcyp.jpg",
+    "__v": 0
+  },
+  {
+    "_id": "63fe4fcf16363a500a0a3669",
+    "name": "ASUS",
+    "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610382/backProductosPc/Marcas/redragon_lhp8fc.png",
+    "__v": 0
+  },
+  {
+    "_id": "63fe4fcf16363a500a0a366b",
+    "name": "EVGA",
+    "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610382/backProductosPc/Marcas/redragon_lhp8fc.png",
+    "__v": 0
+  },
+  {
+    "_id": "63fe4fcf16363a500a0a3665",
+    "name": "Corsair",
+    "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610382/backProductosPc/Marcas/redragon_lhp8fc.png",
+    "__v": 0
+  },
+  {
+    "_id": "63fe4fcf16363a500a0a3663",
+    "name": "NVIDIA",
+    "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610382/backProductosPc/Marcas/redragon_lhp8fc.png",
+    "__v": 0
+  }
+]

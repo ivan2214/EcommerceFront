@@ -1,65 +1,62 @@
-import { addCartProductAsync } from '@/redux/slices/cart/thunk'
+import { addCartProductAsync } from "@/redux/slices/cart/thunk";
 
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { MdOutlineFavoriteBorder } from 'react-icons/md'
-import { formatAsARS } from '@/utils/formatNumber'
-import { Link } from 'react-router-dom'
-import SkeletonImage from './SkeletonImage'
-import { motion } from 'framer-motion'
-import { getTotals } from '@/redux/slices/cart/cartSlice'
-import { clearDetailProductState } from '@/redux/slices/product/productSlice'
-import { addFavorite, deleteFavorite } from '@/redux/slices/products/productsSlice'
-import SvgCorazon from '@/Icons/SvgCorazon'
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { MdOutlineFavoriteBorder } from "react-icons/md";
+import { formatAsARS } from "@/utils/formatNumber";
+import { Link } from "react-router-dom";
+import SkeletonImage from "./SkeletonImage";
+import { motion } from "framer-motion";
+import { getTotals } from "@/redux/slices/cart/cartSlice";
+import { clearDetailProductState } from "@/redux/slices/product/productSlice";
+import { addFavorite, deleteFavorite } from "@/redux/slices/products/productsSlice";
+import SvgCorazon from "@/Icons/SvgCorazon";
 
 const CardProduct = ({ title, description, price, image, id }) => {
-  const dispatch = useDispatch()
-  const { cartItems } = useSelector((s) => s.cart)
-  const { favorites } = useSelector((s) => s.products)
-  const [loading, setLoading] = useState(false)
+  const dispatch = useDispatch();
+  const { cartItems } = useSelector((s) => s.cart);
+  const { favorites } = useSelector((s) => s.products);
+  const [loading, setLoading] = useState(false);
 
-  const conditionFav = favorites?.findIndex((f) => f._id === id)
+  const conditionFav = favorites?.findIndex((f) => f._id === id);
 
   const addCart = () => {
-    dispatch(addCartProductAsync(id))
-  }
+    dispatch(addCartProductAsync(id));
+  };
 
   const clearDetailState = () => {
-    dispatch(clearDetailProductState())
-  }
+    dispatch(clearDetailProductState());
+  };
 
   const addFavoriteProduct = (id) => {
-    const index = favorites?.findIndex((p) => p._id == id)
+    const index = favorites?.findIndex((p) => p._id == id);
 
-    if (index === -1) return dispatch(addFavorite(id))
-    if (index >= 0) return dispatch(deleteFavorite(id))
-  }
+    if (index === -1) return dispatch(addFavorite(id));
+    if (index >= 0) return dispatch(deleteFavorite(id));
+  };
 
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     setTimeout(() => {
-      setLoading(false)
-    }, 1000)
-  }, [])
+      setLoading(false);
+    }, 1000);
+  }, []);
 
   useEffect(() => {
-    dispatch(getTotals())
-  }, [cartItems.length])
+    dispatch(getTotals());
+  }, [cartItems.length]);
 
   return (
     <motion.article
-      initial={{ x: 100 }}
-      animate={{ x: 0 }}
-      transition={{ duration: 1 }}
       className={`relative h-full rounded-md md:max-h-[700px] md:min-h-[500px] md:w-96 md:max-w-xs ${
-        conditionFav !== -1 && 'border border-purple-600'
+        conditionFav !== -1 && "border border-purple-600"
       } `}
     >
       <div className='flex h-full flex-col  items-center  justify-between '>
         {!loading ? (
           <Link to={`/product/${id}`} onClick={clearDetailState} className=' '>
             <motion.img
-              initial={{ scale: 0.2 }}
+              initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               transition={{ duration: 1 }}
               loading='lazy'
@@ -75,7 +72,7 @@ const CardProduct = ({ title, description, price, image, id }) => {
           <div className='flex  h-full w-full flex-col items-start justify-between gap-5'>
             <h3 className='text-lg font-bold capitalize text-purple-700'>{title}</h3>
             <p className='py-5 text-left text-base font-light'>
-              {description.length > 150 ? description.slice(0, 150) + '...' : description}
+              {description.length > 150 ? description.slice(0, 150) + "..." : description}
             </p>
             <span>{formatAsARS(price)}</span>
             <span className='rounded-full bg-purple-700 px-5 text-white'>En stock.</span>
@@ -99,11 +96,11 @@ const CardProduct = ({ title, description, price, image, id }) => {
           onClick={() => addFavoriteProduct(id)}
           className={` rounded-full border-purple-700  text-center  font-bold  text-purple-700 transition-all duration-300 hover:rounded-full hover:text-purple-700 `}
         >
-          <SvgCorazon className={`${conditionFav !== -1 && 'text-purple-500 '} rounded-full `} />
+          <SvgCorazon className={`${conditionFav !== -1 && "text-purple-500 "} rounded-full `} />
         </button>
       </div>
     </motion.article>
-  )
-}
+  );
+};
 
-export default CardProduct
+export default CardProduct;

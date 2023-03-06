@@ -1,12 +1,18 @@
-import axios from "axios";
-import { getAllCategories } from "./categoriesSlice";
+import axios from 'axios'
+import { getAllCategories } from './categoriesSlice'
+import categoriesDb from './categoriesDb.json'
 
 export const getAllCategoriesAsync = () => async (dispatch) => {
-  // deploy
-  const url = "http://localhost:3001/api";
-  /* const url = 'http://localhost:1337/api' */
-  const res = await axios.get(`${url}/categories`);
-  const data = res.data;
+  const url = 'http://localhost:3001/api'
+  try {
+    const res = await axios.get(`${url}/products`)
+    const data = res.data
 
-  dispatch(getAllCategories(data));
-};
+    dispatch(getAllCategories(data))
+  } catch (error) {
+    console.log(error)
+    const data = categoriesDb
+
+    dispatch(getAllCategories(data))
+  }
+}

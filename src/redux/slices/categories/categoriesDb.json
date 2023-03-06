@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "63fead1b223639bc5d2dedad",
+    "name": "Procesadores",
+    "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/kingston_muqcyp.jpg",
+    "__v": 0
+  },
+  {
+    "_id": "63fead1b223639bc5d2dedb5",
+    "name": "Discos duros SSD",
+    "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/kingston_muqcyp.jpg",
+    "__v": 0
+  },
+  {
+    "_id": "63fead1b223639bc5d2dedbd",
+    "name": "Placas base",
+    "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/kingston_muqcyp.jpg",
+    "__v": 0
+  },
+  {
+    "_id": "63fead1c223639bc5d2dedc5",
+    "name": "Fuentes de alimentación",
+    "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/kingston_muqcyp.jpg",
+    "__v": 0
+  },
+  {
+    "_id": "63fead1c223639bc5d2dedcd",
+    "name": "Memoria RAM",
+    "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/kingston_muqcyp.jpg",
+    "__v": 0
+  },
+  {
+    "_id": "63fead1c223639bc5d2dedd5",
+    "name": "Tarjetas gráficas",
+    "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/kingston_muqcyp.jpg",
+    "__v": 0
+  }
+]
