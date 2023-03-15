@@ -1,105 +1,105 @@
-import { orderProducts } from "@/redux/slices/products/productsSlice";
-import { getAllProductsAsync, filterAsync } from "@/redux/slices/products/thunk";
-import React, { useEffect, useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import "./Filters.css";
-import { toast } from "react-hot-toast";
-import { SortArray } from "@/utils/sortedArray";
-import { motion, AnimatePresence } from "framer-motion";
+import { orderProducts } from '@/redux/slices/products/productsSlice'
+import { getAllProductsAsync, filterAsync } from '@/redux/slices/products/thunk'
+import React, { useEffect, useRef, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
+import './Filters.css'
+import { toast } from 'react-hot-toast'
+import { SortArray } from '@/utils/sortedArray'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const Filters = () => {
-  const { name, cat } = useParams();
-  const { categories } = useSelector((s) => s.categories);
-  const { brands } = useSelector((s) => s.brands);
-  let catAlfa = [...categories].sort(SortArray);
-  let brandAlfa = [...brands].sort(SortArray);
-  const [order, setOrder] = useState("");
-  const [openFiltersCategory, setOpenFiltersCategory] = useState("");
-  const [openFiltersOrder, setOpenFiltersOrder] = useState(false);
-  const [openFiltersBrand, setOpenFiltersBrand] = useState(false);
+  const { name, cat } = useParams()
+  const { categories } = useSelector((s) => s.categories)
+  const { brands } = useSelector((s) => s.brands)
+  let catAlfa = [...categories].sort(SortArray)
+  let brandAlfa = [...brands].sort(SortArray)
+  const [order, setOrder] = useState('')
+  const [openFiltersCategory, setOpenFiltersCategory] = useState('')
+  const [openFiltersOrder, setOpenFiltersOrder] = useState(false)
+  const [openFiltersBrand, setOpenFiltersBrand] = useState(false)
   const [filters, setFilters] = useState({
     brand: [],
     category: [],
-  });
-  const dispatch = useDispatch();
+  })
+  const dispatch = useDispatch()
 
   useEffect(() => {
     if (name && !filters.brand.includes(name))
       setFilters({
         ...filters,
         brand: [...filters.brand, name],
-      });
-  }, [name]);
+      })
+  }, [name])
 
   useEffect(() => {
     if (cat && !filters.category.includes(cat))
       setFilters({
         ...filters,
         category: [...filters.category, cat],
-      });
-  }, [cat]);
+      })
+  }, [cat])
 
   const handleChange = (e) => {
-    if (e?.target?.name === "order") setOrder(e.target?.value);
+    if (e?.target?.name === 'order') setOrder(e.target?.value)
     if (e?.target?.checked) {
       setFilters({
         ...filters,
         [e.target.name]:
-          e.target.name == "category"
+          e.target.name == 'category'
             ? [...filters.category, e.target?.value]
             : [...filters.brand, e.target?.value],
-      });
+      })
     } else {
       setFilters({
         brand: filters.brand.filter((b) => b !== e.target.value),
         category: filters.category.filter((c) => c !== e.target.value),
-      });
-      dispatch(getAllProductsAsync());
+      })
+      dispatch(getAllProductsAsync())
     }
-  };
+  }
 
   const handleChangeOrder = (e) => {
-    setOrder(e.value);
-  };
+    setOrder(e.value)
+  }
 
   const clearFilters = () => {
-    dispatch(getAllProductsAsync());
+    dispatch(getAllProductsAsync())
     setFilters({
       brand: [],
       category: [],
-    });
-    setOrder("");
-  };
+    })
+    setOrder('')
+  }
 
   useEffect(() => {
     if (filters.brand.length > 0 || filters.category.length > 0) {
-      filter();
+      filter()
     }
-  }, [filters]);
+  }, [filters])
 
   useEffect(() => {
-    if (order === "asc" || order == "desc") {
-      dispatch(orderProducts(order));
+    if (order === 'asc' || order == 'desc') {
+      dispatch(orderProducts(order))
     }
-  }, [order]);
+  }, [order])
 
   useEffect(() => {
-    if (order === "order") dispatch(getAllProductsAsync());
-    if (order === "order") {
-      setFilters({ brand: [], category: [] });
-      setOrder("");
+    if (order === 'order') dispatch(getAllProductsAsync())
+    if (order === 'order') {
+      setFilters({ brand: [], category: [] })
+      setOrder('')
     }
-  }, [order, filters]);
+  }, [order, filters])
 
   const filter = () => {
-    dispatch(filterAsync(filters));
+    dispatch(filterAsync(filters))
     toast.promise(
       dispatch(filterAsync(filters)),
       {
-        loading: "Cargando productos filtrados...",
-        success: "Filtrados!",
-        error: "Ups algo salio mal.",
+        loading: 'Cargando productos filtrados...',
+        success: 'Filtrados!',
+        error: 'Ups algo salio mal.',
       },
       {
         duration: 2000,
@@ -108,21 +108,21 @@ const Filters = () => {
 
         // Styling
 
-        className: "",
+        className: '',
         style: {
-          background: "##111827",
-          color: "#ffffff",
+          background: '##111827',
+          color: '#ffffff',
         },
       },
-    );
-    window.scroll(0, 0);
-  };
+    )
+    window.scroll(0, 0)
+  }
 
   const list = {
     visible: {
       opacity: 1,
       transition: {
-        when: "beforeChildren",
+        when: 'beforeChildren',
         staggerChildren: 0.3,
         staggerDirection: 1,
         delayChildren: 0.3,
@@ -131,17 +131,17 @@ const Filters = () => {
     hidden: {
       opacity: 0,
       transition: {
-        when: "afterChildren",
+        when: 'afterChildren',
       },
     },
-  };
+  }
 
   const item = {
     visible: { opacity: 1, x: 0 },
     hidden: { opacity: 0, x: -100 },
-  };
+  }
 
-  const condition = filters.brand.length > 0 || filters.category.length > 0 || order !== "";
+  const condition = filters.brand.length > 0 || filters.category.length > 0 || order !== ''
 
   return (
     <>
@@ -170,6 +170,20 @@ const Filters = () => {
       </div>
 
       {/* filters mobile */}
+
+      {condition ? (
+        <button
+          className={`animationButton rounded-full border  border-sky-400 py-1 px-4 text-gray-500 transition-all duration-500 
+
+             `}
+          onClick={clearFilters}
+        >
+          Borrar Filtros
+        </button>
+      ) : (
+        <></>
+      )}
+
       {/* categoria */}
       <AnimatePresence>
         {openFiltersCategory && (
@@ -186,7 +200,7 @@ const Filters = () => {
               className=' my-5 w-full border border-white px-5  py-10 shadow-sm'
             >
               {catAlfa.map((c) => {
-                console.log(catAlfa);
+                console.log(catAlfa)
                 return (
                   <motion.div variants={item} key={c._id} className='flex items-center gap-5'>
                     <input
@@ -200,7 +214,7 @@ const Filters = () => {
                     />
                     <label htmlFor={c?.name}>{c?.name}</label>
                   </motion.div>
-                );
+                )
               })}
             </motion.section>
           </motion.div>
@@ -235,7 +249,7 @@ const Filters = () => {
                     />
                     <label htmlFor={c?.name}>{c?.name}</label>
                   </motion.div>
-                );
+                )
               })}
             </motion.section>
           </motion.div>
@@ -252,7 +266,7 @@ const Filters = () => {
             className=' my-5 w-full border border-white px-5 py-5 shadow-sm'
           >
             <motion.select
-              value={order || "order"}
+              value={order || 'order'}
               onChange={({ target }) => handleChangeOrder(target)}
               className='max-w-[150px]  select-none appearance-none rounded-md bg-purple-700 py-1 px-3 text-white'
               id=''
@@ -273,7 +287,7 @@ const Filters = () => {
 
       {/* pc */}
 
-      <section className='sticky left-0  hidden flex-col gap-5 overflow-hidden p-5  md:flex md:min-h-screen md:w-full md:max-w-[150px] md:flex-row   md:flex-col md:justify-start md:justify-start md:gap-16 md:py-10'>
+      <section className='sticky left-0  hidden flex-col gap-5 overflow-hidden p-5  md:flex md:min-h-screen md:w-full md:max-w-[150px]   md:flex-col md:justify-start  md:gap-16 md:py-10'>
         <div className='flex flex-col items-start gap-5'>
           <h2 className='text-xl font-bold text-purple-700'>Ordenar por:</h2>
           {condition ? (
@@ -292,7 +306,7 @@ const Filters = () => {
             initial={{ x: -100 }}
             transition={{ duration: 1 }}
             animate={{ x: 0 }}
-            value={order || "order"}
+            value={order || 'order'}
             onChange={({ target }) => handleChangeOrder(target)}
             className='max-w-[150px] select-none rounded-md bg-white py-1 px-3 text-gray-900'
             id=''
@@ -319,7 +333,7 @@ const Filters = () => {
                   />
                   <label htmlFor={b?.name}>{b?.name}</label>
                 </motion.div>
-              );
+              )
             })}
           </motion.div>
         </div>
@@ -340,13 +354,13 @@ const Filters = () => {
                   />
                   <label htmlFor={c?.name}>{c?.name}</label>
                 </motion.div>
-              );
+              )
             })}
           </motion.div>
         </div>
       </section>
     </>
-  );
-};
+  )
+}
 
-export default Filters;
+export default Filters
