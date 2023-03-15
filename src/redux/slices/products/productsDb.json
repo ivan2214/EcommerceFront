@@ -3,7 +3,7 @@
     "_id": "63fe4fcf16363a500a0a3660",
     "title": "Procesador Intel Core i9-11900K",
     "description": "El procesador Intel Core i9-11900K ofrece un rendimiento increíble para juegos y aplicaciones de alta demanda.",
-    "image": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677637169/backProductosPc/componentes/ryzen5-oem_ctsilx.png",
+    "image": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1678920950/11900-300x300_ij2nav.png",
     "price": 550,
     "category": {
       "_id": "63fead1b223639bc5d2dedad",
@@ -14,7 +14,7 @@
     "brand": {
       "_id": "63fe4fcf16363a500a0a3661",
       "name": "Intel",
-      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610382/backProductosPc/Marcas/redragon_lhp8fc.png",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/Intel_t9gkim.png",
       "__v": 0
     },
     "__v": 0
@@ -23,7 +23,7 @@
     "_id": "63fe4fcf16363a500a0a3666",
     "title": "Disco duro SSD Samsung 970 EVO Plus 1TB",
     "description": "El disco duro SSD Samsung 970 EVO Plus ofrece una velocidad de lectura y escritura increíblemente rápida y una capacidad de almacenamiento masiva.",
-    "image": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677637169/backProductosPc/componentes/ryzen5-oem_ctsilx.png",
+    "image": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1678920995/es-970-evoplus-nvme-m2-ssd-mz-v7s1t0bw-503532894_uwt0ib.avif",
     "price": 200,
     "category": {
       "_id": "63fead1b223639bc5d2dedb5",
@@ -34,7 +34,7 @@
     "brand": {
       "_id": "63fe4fcf16363a500a0a3667",
       "name": "Samsung",
-      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/kingston_muqcyp.jpg",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1678920373/Samsung_Logo.svg_jkuch8.webp",
       "__v": 0
     },
     "__v": 0
@@ -43,7 +43,7 @@
     "_id": "63fe4fcf16363a500a0a3668",
     "title": "Placa base ASUS ROG Strix Z590-E Gaming WiFi 6",
     "description": "La placa base ASUS ROG Strix Z590-E Gaming WiFi 6 ofrece una conectividad rápida y confiable para juegos y aplicaciones de alta demanda.",
-    "image": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677637169/backProductosPc/componentes/ryzen5-oem_ctsilx.png",
+    "image": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1678920900/221_13-10-2022-03-10-23-hero_tjts22.png",
     "price": 350,
     "category": {
       "_id": "63fead1b223639bc5d2dedbd",
@@ -54,7 +54,7 @@
     "brand": {
       "_id": "63fe4fcf16363a500a0a3669",
       "name": "ASUS",
-      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610382/backProductosPc/Marcas/redragon_lhp8fc.png",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1678920487/Asus-Logo_kdfndd.png",
       "__v": 0
     },
     "__v": 0
@@ -63,7 +63,7 @@
     "_id": "63fe4fcf16363a500a0a366a",
     "title": "Fuente de alimentación EVGA SuperNOVA 850W",
     "description": "La fuente de alimentación EVGA SuperNOVA 850W ofrece una potencia confiable para sistemas de alta demanda.",
-    "image": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677637169/backProductosPc/componentes/ryzen5-oem_ctsilx.png",
+    "image": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1678921045/220-GT-0850-Y1_LG_1_qxoof2.png",
     "price": 120,
     "category": {
       "_id": "63fead1c223639bc5d2dedc5",
@@ -74,7 +74,7 @@
     "brand": {
       "_id": "63fe4fcf16363a500a0a366b",
       "name": "EVGA",
-      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610382/backProductosPc/Marcas/redragon_lhp8fc.png",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1678920557/2500px-EVGA_Logo.svg_vtnwfr.png",
       "__v": 0
     },
     "__v": 0
@@ -83,7 +83,7 @@
     "_id": "63fe4fcf16363a500a0a3664",
     "title": "Memoria RAM Corsair Vengeance LPX 16GB DDR4 3200MHz",
     "description": "La memoria RAM Corsair Vengeance LPX ofrece un rendimiento rápido y confiable para juegos y aplicaciones de alta demanda.",
-    "image": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677637169/backProductosPc/componentes/ryzen5-oem_ctsilx.png",
+    "image": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1678921077/-CMK16GX4M2B3200C16-Gallery-VENG-LPX-BLK-00_rzlory.webp",
     "price": 80,
     "category": {
       "_id": "63fead1c223639bc5d2dedcd",
@@ -94,7 +94,7 @@
     "brand": {
       "_id": "63fe4fcf16363a500a0a3665",
       "name": "Corsair",
-      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610382/backProductosPc/Marcas/redragon_lhp8fc.png",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/Corsair_m6vgmx.png",
       "__v": 0
     },
     "__v": 0
@@ -103,7 +103,7 @@
     "_id": "63fe4fcf16363a500a0a3662",
     "title": "Tarjeta gráfica NVIDIA GeForce RTX 3080",
     "description": "La tarjeta gráfica NVIDIA GeForce RTX 3080 ofrece un rendimiento de juego increíble y es compatible con trazado de rayos en tiempo real.",
-    "image": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677637169/backProductosPc/componentes/ryzen5-oem_ctsilx.png",
+    "image": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1678921130/6a878d836a0640cbbb45d51fd288227f_a1y3x0.webp",
     "price": 1100,
     "category": {
       "_id": "63fead1c223639bc5d2dedd5",
@@ -114,7 +114,7 @@
     "brand": {
       "_id": "63fe4fcf16363a500a0a3663",
       "name": "NVIDIA",
-      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610382/backProductosPc/Marcas/redragon_lhp8fc.png",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1675460126/nvidia_9a18b8e8a2.png",
       "__v": 0
     },
     "__v": 0
