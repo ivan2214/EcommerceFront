@@ -9,7 +9,7 @@ import SkeletonImage from "./SkeletonImage";
 import { motion } from "framer-motion";
 import { getTotals } from "@/redux/slices/cart/cartSlice";
 import { clearDetailProductState } from "@/redux/slices/product/productSlice";
-import { addFavorite, deleteFavorite } from "@/redux/slices/products/productsSlice";
+import { addFavorite, deleteFavorite, getTotalsFavorites } from "@/redux/slices/products/productsSlice";
 import SvgCorazon from "@/Icons/SvgCorazon";
 
 const CardProduct = ({ title, description, price, image, id }) => {
@@ -29,7 +29,7 @@ const CardProduct = ({ title, description, price, image, id }) => {
   };
 
   const addFavoriteProduct = (id) => {
-    const index = favorites?.findIndex((p) => p._id == id);
+    const index = favorites?.findIndex((p) => p?._id == id);
 
     if (index === -1) return dispatch(addFavorite(id));
     if (index >= 0) return dispatch(deleteFavorite(id));
@@ -44,7 +44,11 @@ const CardProduct = ({ title, description, price, image, id }) => {
 
   useEffect(() => {
     dispatch(getTotals());
-  }, [cartItems.length]);
+  }, [cartItems?.length]);
+
+  useEffect(() => {
+    dispatch(getTotalsFavorites());
+  }, [favorites?.length]);
 
   return (
     <motion.article

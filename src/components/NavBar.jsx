@@ -17,6 +17,7 @@ const NavBar = () => {
   const [query, setQuery] = useState('')
 
   const { cartTotalQuantity } = useSelector((s) => s.cart)
+  const { totalFav } = useSelector((s) => s.products)
 
   const handleSearch = (query) => {
     setQuery(query.value)
@@ -234,11 +235,13 @@ const NavBar = () => {
               {!user?.admin && (
                 <li
                   onClick={upScroll}
-                  className='hidden items-center  gap-3 font-sans text-lg font-semibold text-white transition-all duration-500 hover:text-gray-500 md:flex'
+                  className='hidden relative items-center  gap-3 font-sans text-lg font-semibold text-white transition-all duration-500 hover:text-gray-500 md:flex'
                 >
                   <Link className='flex items-center justify-center gap-2' to='/favorite'>
                     <MdOutlineFavoriteBorder className='text-2xl transition-all duration-500 ease-linear hover:origin-top hover:rotate-12 ' />
-                    favoritos
+                    <span className='absolute text-white md:-top-[17px] md:-right-1 '>
+                      {totalFav}
+                    </span>
                   </Link>
                 </li>
               )}
