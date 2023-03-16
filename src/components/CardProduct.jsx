@@ -76,7 +76,7 @@ const CardProduct = ({ title, description, price, image, id }) => {
           <div className='flex  h-full w-full flex-col items-start justify-between gap-5'>
             <h3 className='text-lg font-bold capitalize text-purple-700'>{title}</h3>
             <p className='py-5 text-left text-base font-light'>
-              {description.length > 150 ? description.slice(0, 150) + "..." : description}
+              {description?.length > 150 ? description.slice(0, 150) + "..." : description}
             </p>
             <span>{formatAsARS(price)}</span>
             <span className='rounded-full bg-purple-700 px-5 text-white'>En stock.</span>

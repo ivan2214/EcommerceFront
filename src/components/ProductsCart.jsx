@@ -60,7 +60,7 @@ const Cart = () => {
       <h2 className='p-10 text-center text-4xl font-bold  text-purple-500 md:p-0'>
         Carrito de Compras
       </h2>
-      {cart.cartItems.length === 0 ? (
+      {cart?.cartItems?.length === 0 ? (
         <div className='p-5'>
           <p>Your cart is currently empty</p>
           <div className='start-shopping'>

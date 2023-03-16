@@ -8,17 +8,17 @@ const Slider = () => {
   const [pointer, setPointer] = useState('rigth')
 
   const prevImage = () => {
-    setImgIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))
+    setImgIndex((prev) => (prev === 0 ? images?.length - 1 : prev - 1))
     setPointer('left')
   }
   const nextImage = () => {
-    setImgIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
+    setImgIndex((prev) => (prev === images?.length - 1 ? 0 : prev + 1))
     setPointer('rigth')
   }
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setImgIndex((prevIndex) => (prevIndex + 1) % images.length)
+      setImgIndex((prevIndex) => (prevIndex + 1) % images?.length)
     }, 3000)
     return () => clearInterval(intervalId)
   }, [])

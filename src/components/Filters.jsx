@@ -73,7 +73,7 @@ const Filters = () => {
   }
 
   useEffect(() => {
-    if (filters.brand.length > 0 || filters.category.length > 0) {
+    if (filters.brand?.length > 0 || filters?.category?.length > 0) {
       filter()
     }
   }, [filters])
@@ -141,7 +141,7 @@ const Filters = () => {
     hidden: { opacity: 0, x: -100 },
   }
 
-  const condition = filters.brand.length > 0 || filters.category.length > 0 || order !== ''
+  const condition = filters?.brand?.length > 0 || filters?.category?.length > 0 || order !== ''
 
   return (
     <>

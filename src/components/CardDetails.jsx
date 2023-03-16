@@ -7,7 +7,7 @@ const CartDetails = ({ id, title, description, price, quantity, image, categorie
   console.log(image);
   return (
     <>
-      {!loading || !image || !title || !description || !image.data.length || isNaN(price) ? (
+      {!loading || !image || !title || !description || !image?.data?.length || isNaN(price) ? (
         <div className=' mx-auto flex h-full  w-full max-w-6xl flex-col justify-center gap-10 md:flex-row  '>
           <div className='flex h-full items-center justify-start gap-5  px-8 md:flex-col md:items-start  md:justify-between'>
             <div

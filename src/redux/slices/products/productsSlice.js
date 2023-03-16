@@ -108,7 +108,7 @@ export const productsSlice = createSlice({
       state.favorites = []
     },
     getTotalsFavorites(state, action) {
-      const total = state.favorites.length
+      const total = state?.favorites?.length
       state.totalFav = total
     },
   },

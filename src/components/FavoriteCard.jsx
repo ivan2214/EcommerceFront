@@ -60,7 +60,7 @@ const FavoriteCard = ({ title, price, stock, description, image, id }) => {
           <div className='flex flex-col items-start gap-5 text-gray-900'>
             <h2 className='max-w-lg text-lg font-bold'>{title}</h2>
             <p className=' text-left text-base font-light md:max-w-2xl'>
-              {description.length > 250 ? description.slice(0, 300) + '...' : description}
+              {description?.length > 250 ? description.slice(0, 300) + '...' : description}
             </p>
             <span className='border border-purple-600 py-1 px-2 text-xl font-bold text-purple-600'>
               {formatAsARS(price)}

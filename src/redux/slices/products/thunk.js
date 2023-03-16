@@ -14,12 +14,12 @@ export const filterAsync = (filters) => {
       let filteredProducts = [...productsDb]
 
       // Agrega los filtros que correspondan
-      if (filters.category && Array.isArray(filters.category) && filters.category.length > 0) {
+      if (filters.category && Array.isArray(filters.category) && filters?.category?.length > 0) {
         filteredProducts = filteredProducts.filter((product) =>
           filters.category.includes(product.category.name),
         )
       }
-      if (filters.brand && Array.isArray(filters.brand) && filters.brand.length > 0) {
+      if (filters.brand && Array.isArray(filters.brand) && filters?.brand?.length > 0) {
         filteredProducts = filteredProducts.filter((product) =>
           filters.brand.includes(product.brand.name),
         )
