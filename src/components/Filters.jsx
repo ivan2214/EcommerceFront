@@ -173,7 +173,7 @@ const Filters = () => {
 
       {condition ? (
         <button
-          className={`animationButton rounded-full border  border-sky-400 py-1 px-4 text-gray-500 transition-all duration-500 
+          className={`animationButton rounded-full border border-sky-400  py-1 px-4 text-gray-500 transition-all duration-500 lg:hidden 
 
              `}
           onClick={clearFilters}
