@@ -8,7 +8,7 @@
     "category": {
       "_id": "63fead1b223639bc5d2dedad",
       "name": "Procesadores",
-      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/kingston_muqcyp.jpg",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1678921302/backProductosPc/categorias/procesador_jo8gnp.png",
       "__v": 0
     },
     "brand": {
@@ -28,7 +28,7 @@
     "category": {
       "_id": "63fead1b223639bc5d2dedb5",
       "name": "Discos duros SSD",
-      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/kingston_muqcyp.jpg",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1678921518/backProductosPc/categorias/icons8-ssd-48_clwo1z.png",
       "__v": 0
     },
     "brand": {
@@ -41,14 +41,14 @@
   },
   {
     "_id": "63fe4fcf16363a500a0a3668",
-    "title": "Placa base ASUS ROG Strix Z590-E Gaming WiFi 6",
-    "description": "La placa base ASUS ROG Strix Z590-E Gaming WiFi 6 ofrece una conectividad rápida y confiable para juegos y aplicaciones de alta demanda.",
+    "title": "Placa Madre ASUS ROG Strix Z590-E Gaming WiFi 6",
+    "description": "La Placa Madre ASUS ROG Strix Z590-E Gaming WiFi 6 ofrece una conectividad rápida y confiable para juegos y aplicaciones de alta demanda.",
     "image": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1678920900/221_13-10-2022-03-10-23-hero_tjts22.png",
     "price": 350,
     "category": {
       "_id": "63fead1b223639bc5d2dedbd",
-      "name": "Placas base",
-      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/kingston_muqcyp.jpg",
+      "name": "Placas madre",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1678921585/backProductosPc/categorias/icons8-motherboard-100_htbvxl.png",
       "__v": 0
     },
     "brand": {
@@ -68,7 +68,7 @@
     "category": {
       "_id": "63fead1c223639bc5d2dedc5",
       "name": "Fuentes de alimentación",
-      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/kingston_muqcyp.jpg",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1678921331/backProductosPc/categorias/fuente-de-alimentacion_h5ghok.png",
       "__v": 0
     },
     "brand": {
@@ -88,7 +88,7 @@
     "category": {
       "_id": "63fead1c223639bc5d2dedcd",
       "name": "Memoria RAM",
-      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/kingston_muqcyp.jpg",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1678921331/backProductosPc/categorias/memoria-ram_p5szhl.png",
       "__v": 0
     },
     "brand": {
@@ -108,7 +108,7 @@
     "category": {
       "_id": "63fead1c223639bc5d2dedd5",
       "name": "Tarjetas gráficas",
-      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1677610381/backProductosPc/Marcas/kingston_muqcyp.jpg",
+      "logo": "https://res.cloudinary.com/dc5wgu8m5/image/upload/v1678921331/backProductosPc/categorias/Placa_de_video_axitzv.png",
       "__v": 0
     },
     "brand": {
