@@ -3,20 +3,9 @@ import { getAllProducts, filterProducts, searchProduct, loadingState } from './p
 import productsDb from './productsDb.json'
 
 export const getAllProductsAsync = () => async (dispatch) => {
-  const url = 'http://localhost:3001/api'
-  try {
-    const res = await axios.get(`${url}/products`)
-    const data = res.data
-    dispatch(loadingState(true))
-    dispatch(getAllProducts(data))
-    dispatch(loadingState(false))
-  } catch (error) {
-    console.log(error)
-    const data = productsDb
-    dispatch(loadingState(true))
-    dispatch(getAllProducts(data))
-    dispatch(loadingState(false))
-  }
+  dispatch(loadingState(true))
+  dispatch(getAllProducts(productsDb))
+  dispatch(loadingState(false))
 }
 
 export const filterAsync = (filters) => {
@@ -27,12 +16,12 @@ export const filterAsync = (filters) => {
       // Agrega los filtros que correspondan
       if (filters.category && Array.isArray(filters.category) && filters.category.length > 0) {
         filteredProducts = filteredProducts.filter((product) =>
-          filters.category.includes(product.category),
+          filters.category.includes(product.category.name),
         )
       }
       if (filters.brand && Array.isArray(filters.brand) && filters.brand.length > 0) {
         filteredProducts = filteredProducts.filter((product) =>
-          filters.brand.includes(product.brand),
+          filters.brand.includes(product.brand.name),
         )
       }
       console.log(filterProducts)
