@@ -20,7 +20,8 @@ export const productsSlice = createSlice({
         state.products = productsJson.filter(
           (product) =>
             product.title.toLowerCase().includes(action.payload.toLowerCase()) ||
-            product.category.name.toLowerCase().includes(action.payload.toLowerCase()),
+            product.category.name.toLowerCase().includes(action.payload.toLowerCase()) ||
+            product.brand.name.toLowerCase().includes(action.payload.toLowerCase()),
         )
       } else {
         state.products = action.payload
@@ -44,7 +45,8 @@ export const productsSlice = createSlice({
       state.products = productsJson.filter(
         (product) =>
           product?.title?.toLowerCase().includes(action.payload.toLowerCase()) ||
-          product.category.name.toLowerCase().includes(action.payload.toLowerCase()),
+          product.category.name.toLowerCase().includes(action.payload.toLowerCase()) ||
+          product.brand.name.toLowerCase().includes(action.payload.toLowerCase()),
       )
     },
     loadingState: (state, action) => {
@@ -105,6 +107,10 @@ export const productsSlice = createSlice({
     clearFavorite: (state, action) => {
       state.favorites = []
     },
+    getTotalsFavorites(state, action) {
+      const total = state.favorites.length
+      state.totalFav = total
+    },
   },
 })
 
@@ -118,6 +124,7 @@ export const {
   orderProducts,
   clearFavorite,
   deleteFavorite,
+  getTotalsFavorites,
 } = productsSlice.actions // para las action
 
 export default productsSlice.reducer //para la store

@@ -4,7 +4,7 @@ import productsData from '../products/productsDb.json'
 
 export const getAsyncProductDetail = (id) => {
   return function (dispatch) {
-    const data = productsData.find((product) => product._id === id)
+    const data = productsData.find((product) => product?._id === id)
     console.log(data)
     dispatch(loadingState(true))
 
