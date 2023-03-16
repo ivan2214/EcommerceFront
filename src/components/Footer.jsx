@@ -1,14 +1,9 @@
-import React from "react";
-import {
-  AiFillTwitterCircle,
-  AiFillYoutube,
-  AiFillInstagram,
-  AiFillFacebook,
-} from "react-icons/ai";
+import React from 'react'
+import { AiFillTwitterCircle, AiFillYoutube, AiFillInstagram, AiFillFacebook } from 'react-icons/ai'
 
 const Footer = () => {
   return (
-    <footer className='flex w-full flex-row items-center justify-center gap-10 bg-gray-900 py-5  text-white h-full w-full '>
+    <footer className='flex  h-full w-full flex-row items-center justify-center gap-10  bg-gray-900 py-5 text-white '>
       <section>
         <div className='flex flex-col items-center gap-5'>
           <h4>Ayuda</h4>
@@ -18,7 +13,7 @@ const Footer = () => {
           </button>
         </div>
       </section>
-      <section className="border-r h-full">
+      <section className='h-full border-r'>
         <div className='flex flex-col items-center gap-5'>
           <button className='rounded-lg border bg-purple-700 p-1 text-xs text-white transition-all  duration-300 hover:bg-purple-400'>
             ¡Trabajá con nosotros!
@@ -51,7 +46,7 @@ const Footer = () => {
         </div>
       </section>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
